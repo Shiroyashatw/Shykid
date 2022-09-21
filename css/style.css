@@ -1,0 +1,181 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+body {
+  font-size: 16px;
+}
+
+a {
+  color: white;
+  display: block;
+  text-decoration: none;
+}
+
+.main-header {
+  width: 100%;
+  background-color: #8ac6d1;
+}
+.main-header h1 {
+  color: #4E0E2E;
+  line-height: 60px;
+  letter-spacing: 4px;
+  margin: 0 20px;
+}
+.main-header .container {
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.main-header .main-menu {
+  display: flex;
+}
+.main-header .main-menu li {
+  font-size: 20px;
+  position: relative;
+  transition: 0.5s;
+}
+.main-header .main-menu li::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  background-color: #fff;
+  transition: 0.5s;
+}
+.main-header .main-menu li:hover {
+  background-color: #fff1ac;
+}
+.main-header .main-menu li:hover::after {
+  left: 0;
+  right: 0;
+}
+.main-header .main-menu li a {
+  padding: 0 15px;
+  line-height: 60px;
+}
+.main-header .main-menu li a:hover {
+  transition: all 0.5s ease;
+  color: black;
+}
+.main-header .main-menu li i {
+  padding-left: 2px;
+}
+
+.headerimg img {
+  width: 100%;
+}
+
+.main-item {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-item .shell {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  transform-style: preserve-3d;
+  perspective: 900px;
+}
+.main-item .shell:hover .box {
+  transform: rotateY(20deg);
+}
+.main-item .shell .box {
+  position: relative;
+  width: 300px;
+  height: 230px;
+  transition: 0.3s;
+  overflow: hidden;
+  margin: 30px;
+  transform: rotateY(0);
+  transition-delay: 0.1s;
+  border-radius: 5px;
+  border: #000 3px solid;
+}
+.main-item .shell .box:hover {
+  background-color: #f4f0e6;
+  transition: 0.5s;
+  height: 330px;
+  transform: rotateY(0deg) scale(1.25);
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+.main-item .shell .box:hover ~ .box {
+  transform: rotateY(-20deg);
+}
+.main-item .shell .box:hover .content h2 a {
+  font-size: 30px;
+}
+.main-item .shell .box:hover .content p {
+  color: #000;
+  transform: translateY(170px);
+}
+.main-item .shell .box .images img {
+  width: 100%;
+}
+.main-item .shell .box .content {
+  position: absolute;
+  top: 0;
+  width: 90%;
+  height: 100%;
+  z-index: 999;
+  padding: 15px;
+}
+.main-item .shell .box .content h2 a {
+  color: rgb(210, 140, 140);
+  transition: 0.3s;
+  font-size: 24px;
+  transform: translateY(160px);
+  text-align: center;
+}
+.main-item .shell .box .content p {
+  color: #fff;
+  transition: 0.3s;
+  font-size: 16px;
+  transform: translateY(600px);
+}
+
+.footer {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #204969;
+  height: 180px;
+}
+.footer .footer-wrap {
+  padding: 15px 25px;
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer .footer-wrap .footer-box {
+  color: #fff;
+  margin: 0 5rem;
+}
+.footer .footer-wrap .footer-box .footer-content li a {
+  margin: 1rem 0;
+  border-bottom: #fff 2px solid;
+}
+.footer .footer-wrap .footer-box .footer-content li a::after {
+  content: "";
+  position: relative;
+  height: 3px;
+  left: 50%;
+  right: 50%;
+  background-color: #fff;
+}
+.footer .footer-wrap .footer-box .footer-content li a:hover {
+  color: burlywood;
+  transition: 0.5s;
+  border-bottom: #fff1ac 2px solid;
+}/*# sourceMappingURL=style.css.map */
