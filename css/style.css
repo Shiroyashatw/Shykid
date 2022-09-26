@@ -15,6 +15,13 @@ a {
   text-decoration: none;
 }
 
+.vertical-center {
+  -ms-writing-mode: tb-lr;
+      writing-mode: vertical-lr;
+  text-align: center;
+  letter-spacing: 0.5rem;
+}
+
 .main-header {
   width: 100%;
   background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
@@ -72,6 +79,7 @@ a {
   padding-left: 2px;
 }
 .main-header .main-menu .dropdown {
+  display: none;
   position: absolute;
   background-color: #fff;
 }
@@ -120,9 +128,19 @@ main .backImage .filter {
   z-index: -1;
 }
 
+.art-title {
+  margin-top: 3rem;
+  text-align: center;
+}
+.art-title h4 {
+  font-size: 3rem;
+  color: #e59572;
+  position: relative;
+  display: inline-block;
+}
+
 .main-item {
-  min-height: 100vh;
-  margin-top: 100px;
+  min-height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -253,4 +271,36 @@ main .backImage .filter {
 }
 .footer .footer-wrap .footer-box:nth-child(3) li a::after {
   height: 0;
+}
+
+.vaccine-main {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.vaccine-main .vaccine-table {
+  width: 1200px;
+}
+.vaccine-main .vaccine-table table {
+  margin: auto;
+}
+.vaccine-main .vaccine-table table, .vaccine-main .vaccine-table table th, .vaccine-main .vaccine-table table td {
+  border: #263859 2px solid;
+  border-collapse: collapse;
+}
+.vaccine-main .vaccine-table table th {
+  font-size: 26px;
+  padding: 1rem;
+}
+.vaccine-main .vaccine-table table td {
+  padding: 0.5rem 0.2rem;
+  font-size: 22px;
+}
+.vaccine-main .vaccine-table table td a {
+  color: #4E0E2E;
+}
+.vaccine-main .vaccine-table table td a:hover {
+  color: #e59572;
+  transition: 0.5s;
 }/*# sourceMappingURL=style.css.map */

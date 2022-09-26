@@ -16,6 +16,12 @@ a {
     text-decoration: none;
 }
 
+// 文字垂直
+.vertical-center {
+    writing-mode: vertical-lr;
+    text-align: center;
+    letter-spacing: .5rem;
+}
 // 主導覽列div
 .main-header {
     width: 100%;
@@ -39,13 +45,16 @@ a {
 
     .main-menu {
         display: flex;
+
         li {
             font-size: 20px;
             position: relative;
             transition: .5s;
+
             ul li {
                 min-width: 150px;
             }
+
             &::after {
                 content: '';
                 position: absolute;
@@ -59,6 +68,7 @@ a {
 
             &:hover {
                 background-color: #fff1ac;
+
                 &::after {
                     left: 0;
                     right: 0;
@@ -80,8 +90,9 @@ a {
                 padding-left: 2px;
             }
         }
+
         .dropdown {
-            // display: none;
+            display: none;
             position: absolute;
             background-color: #fff;
         }
@@ -142,11 +153,35 @@ main {
 
 }
 
+// 主標題顯示樣式
+.art-title {
+    margin-top: 3rem;
+    text-align: center;
+
+    h4 {
+        font-size: 3rem;
+        color: #e59572;
+        position: relative;
+        // background: blue;
+        display: inline-block;
+        // &::before,&::after{
+        //     content: '';
+        //     position: absolute;
+        //     width: 4rem;
+        //     height: 10px;
+        //     background-color: red;
+        //     top: 50%;
+        // }
+        // &::before {
+        //     right: 0;
+        // }
+    }
+}
 
 // 中間圖片呈現
 .main-item {
-    min-height: 100vh;
-    margin-top: 100px;
+    min-height: 80vh;
+    // margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -318,6 +353,41 @@ main {
 
                     &::after {
                         height: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// vaccine 疫苗網頁CSS
+
+.vaccine-main {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .vaccine-table {
+        width: 1200px;
+        table {
+            margin: auto;
+            // background-color: #f4f0e6;
+            &,th,td {
+                border: #263859 2px solid;
+                border-collapse: collapse
+            }
+            th {
+                font-size: 26px;
+                padding: 1rem;
+            }
+            td {
+                padding: .5rem .2rem;
+                font-size: 22px;
+                a {
+                    color: #4E0E2E;
+                    &:hover {
+                        color: #e59572;
+                        transition: .5s;
                     }
                 }
             }
