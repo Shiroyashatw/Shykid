@@ -22,6 +22,12 @@ a {
     text-align: center;
     letter-spacing: .5rem;
 }
+
+// 文字至中
+.tch {
+    text-align: center;
+}
+
 // 主導覽列div
 .main-header {
     width: 100%;
@@ -42,7 +48,7 @@ a {
         display: flex;
         justify-content: space-between;
     }
-
+    
     .main-menu {
         display: flex;
 
@@ -68,10 +74,13 @@ a {
 
             &:hover {
                 background-color: #fff1ac;
-
                 &::after {
                     left: 0;
                     right: 0;
+                }
+                & .dropdown {
+                    opacity: 1;
+                    transition: .5s;
                 }
             }
 
@@ -92,9 +101,10 @@ a {
         }
 
         .dropdown {
-            display: none;
+            opacity: 0;
             position: absolute;
             background-color: #fff;
+            z-index: 1;
         }
     }
 }
@@ -157,13 +167,12 @@ main {
 .art-title {
     margin-top: 3rem;
     text-align: center;
-
     h4 {
         font-size: 3rem;
         color: #e59572;
-        position: relative;
+        // position: relative;
         // background: blue;
-        display: inline-block;
+        // display: inline-block;
         // &::before,&::after{
         //     content: '';
         //     position: absolute;
@@ -180,7 +189,7 @@ main {
 
 // 中間圖片呈現
 .main-item {
-    min-height: 80vh;
+    min-height: 55vh;
     // margin-top: 20px;
     display: flex;
     justify-content: center;
@@ -363,7 +372,7 @@ main {
 // vaccine 疫苗網頁CSS
 
 .vaccine-main {
-    margin-top: 100px;
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -371,7 +380,6 @@ main {
         width: 1200px;
         table {
             margin: auto;
-            // background-color: #f4f0e6;
             &,th,td {
                 border: #263859 2px solid;
                 border-collapse: collapse
@@ -379,6 +387,7 @@ main {
             th {
                 font-size: 26px;
                 padding: 1rem;
+                background-color: #4bc2c5;
             }
             td {
                 padding: .5rem .2rem;

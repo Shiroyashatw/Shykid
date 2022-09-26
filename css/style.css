@@ -22,6 +22,10 @@ a {
   letter-spacing: 0.5rem;
 }
 
+.tch {
+  text-align: center;
+}
+
 .main-header {
   width: 100%;
   background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
@@ -66,6 +70,10 @@ a {
   left: 0;
   right: 0;
 }
+.main-header .main-menu li:hover .dropdown {
+  opacity: 1;
+  transition: 0.5s;
+}
 .main-header .main-menu li a {
   color: #e59572;
   padding: 0 15px;
@@ -79,9 +87,10 @@ a {
   padding-left: 2px;
 }
 .main-header .main-menu .dropdown {
-  display: none;
+  opacity: 0;
   position: absolute;
   background-color: #fff;
+  z-index: 1;
 }
 
 main .backImage {
@@ -135,12 +144,10 @@ main .backImage .filter {
 .art-title h4 {
   font-size: 3rem;
   color: #e59572;
-  position: relative;
-  display: inline-block;
 }
 
 .main-item {
-  min-height: 80vh;
+  min-height: 55vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -274,7 +281,7 @@ main .backImage .filter {
 }
 
 .vaccine-main {
-  margin-top: 100px;
+  margin-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -292,6 +299,7 @@ main .backImage .filter {
 .vaccine-main .vaccine-table table th {
   font-size: 26px;
   padding: 1rem;
+  background-color: #4bc2c5;
 }
 .vaccine-main .vaccine-table table td {
   padding: 0.5rem 0.2rem;
