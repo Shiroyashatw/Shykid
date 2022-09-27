@@ -118,6 +118,7 @@ main {
         background-size: cover;
         background-position: center;
         position: relative;
+        opacity: .8;
         z-index: 0;
         // 設定使元素變成flex並置中
         display: flex;
@@ -132,6 +133,7 @@ main {
             color: white;
             line-height: 4rem;
             letter-spacing: .4rem;
+            opacity: 1;
         }
 
         .start {
@@ -143,7 +145,7 @@ main {
             border-radius: 1rem;
             letter-spacing: .2rem;
             cursor: pointer;
-
+            opacity: 1;
             &:hover {
                 transition: .5s;
                 background-color: #3b9a9c;
@@ -189,7 +191,7 @@ main {
 
 // 中間圖片呈現
 .main-item {
-    min-height: 55vh;
+    min-height: 60vh;
     // margin-top: 20px;
     display: flex;
     justify-content: center;
@@ -400,6 +402,66 @@ main {
                     }
                 }
             }
+        }
+    }
+}
+
+// disease 病狀網頁CSS
+.disease-main {
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    .disease-box {
+        // justify-content: center;
+        width: 400px;
+        height: 300px;
+        // 用背景圖 背景定位
+        
+        position: relative;
+        right: 20%;
+        z-index: 1;
+        img {
+            width: 400px;
+            height: 300px;
+            display: block;
+            object-fit: cover;
+            object-position: center center;
+            border: #3b9a9c 4px solid;
+        }
+    }
+    .disease-secondbox {
+        width: 700px;
+        height: 300px;
+        // background-color: #4E0E2E;
+        position: absolute;
+        top: 15%;
+        right: 5%;
+        h3,p {
+            padding-left: 8rem;
+        }
+        h3 {
+            font-size: 48px;
+            color: #e59572;
+            // &::after {
+            //     content: '';
+            //     height: 3px;
+            //     width: 10rem;
+            //     background-color: #e59572;
+            //     text-align: center;
+            //     display: block;
+            // }
+        }
+        p {
+            font-size: 22px;
+            color: #0d3f67;
+            // letter-spacing: .1rem;
+            padding: .3rem 0 .3rem 8rem;
+        }
+        .disease-pbox {
+            background-color: rgba(182,137,176,.2);
+            border: rgba(182,137,176,.2) 1px solid;
+            border-radius: 20px;
         }
     }
 }

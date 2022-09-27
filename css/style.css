@@ -100,6 +100,7 @@ main .backImage {
   background-size: cover;
   background-position: center;
   position: relative;
+  opacity: 0.8;
   z-index: 0;
   display: flex;
   justify-content: center;
@@ -113,6 +114,7 @@ main .backImage h3 {
   color: white;
   line-height: 4rem;
   letter-spacing: 0.4rem;
+  opacity: 1;
 }
 main .backImage .start {
   padding: 1rem;
@@ -123,6 +125,7 @@ main .backImage .start {
   border-radius: 1rem;
   letter-spacing: 0.2rem;
   cursor: pointer;
+  opacity: 1;
 }
 main .backImage .start:hover {
   transition: 0.5s;
@@ -147,7 +150,7 @@ main .backImage .filter {
 }
 
 .main-item {
-  min-height: 55vh;
+  min-height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -311,4 +314,52 @@ main .backImage .filter {
 .vaccine-main .vaccine-table table td a:hover {
   color: #e59572;
   transition: 0.5s;
+}
+
+.disease-main {
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.disease-main .disease-box {
+  width: 400px;
+  height: 300px;
+  position: relative;
+  right: 20%;
+  z-index: 1;
+}
+.disease-main .disease-box img {
+  width: 400px;
+  height: 300px;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+  border: #3b9a9c 4px solid;
+}
+.disease-main .disease-secondbox {
+  width: 700px;
+  height: 300px;
+  position: absolute;
+  top: 15%;
+  right: 5%;
+}
+.disease-main .disease-secondbox h3, .disease-main .disease-secondbox p {
+  padding-left: 8rem;
+}
+.disease-main .disease-secondbox h3 {
+  font-size: 48px;
+  color: #e59572;
+}
+.disease-main .disease-secondbox p {
+  font-size: 22px;
+  color: #0d3f67;
+  padding: 0.3rem 0 0.3rem 8rem;
+}
+.disease-main .disease-secondbox .disease-pbox {
+  background-color: rgba(182, 137, 176, 0.2);
+  border: rgba(182, 137, 176, 0.2) 1px solid;
+  border-radius: 20px;
 }/*# sourceMappingURL=style.css.map */
