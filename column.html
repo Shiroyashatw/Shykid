@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <!-- 引用google字體 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <!--  -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 引用fontawesome icon -->
+    <script src="https://kit.fontawesome.com/da3a6ce48e.js" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <title>ShyKid</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            background-color: #000;
+        }
+        .column-main {
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            overflow: hidden;
+        }
+        .page {
+            transform: translateX(-110%);
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            transition: .5s;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        .button {
+            display: block;
+            width: 10%;
+            color: #fff;
+            font-size: 30px;
+            border-bottom: #fff 4px solid;
+            text-align: center;
+            position: absolute;
+            bottom: 10px;
+            margin: 50px;
+            left: calc(50% + (var(--i)*17%));
+            z-index: 999;
+            transition: .3s;
+        }
+        .page-content {
+            box-sizing: border-box;
+            height: 100%;
+            padding: 50px;
+            color: #fff;
+            position: absolute;
+            left: 100%;
+            display: none;
+            animation-name: fade;
+            animation-iteration-count: 1;
+            opacity: 1;
+        }
+        @keyframes fade{
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+        input {
+            display: none;
+        }
+        input:checked+.page {
+            transform: translateX(0px);
+            transition: .4s;
+        }
+        input:checked+.page .page-content {
+            width: 100%;
+            display: block;
+        }
+        .page:nth-child(3) {
+            background-image: url(/img/dog01.jpg);
+        }
+        .page:nth-child(3) .page-content {
+            background-color: rgb(185,130,130);
+        }
+        .page:nth-child(6) {
+            background-image: url(/img/dog02.jpg);
+        }
+        .page:nth-child(6) .page-content {
+            background-color: rgb(170,170,226);
+        }
+        .page:nth-child(9) {
+            background-image: url(/img/dog03.jpg);
+        }
+        .page:nth-child(9) .page-content {
+            background-color: rgb(236,180,110);
+        }
+        .page h1 {
+            font-size: 60px;
+        }
+        .page p {
+            font-size: 30px;
+            padding: 10px;
+            background-color: rgb(0, 0, 0, .3);
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        .page span {
+            font-size: 26px;
+            letter-spacing: 2px;
+            color: rgb(56,56,56);
+        }
+        label:hover {
+            cursor: pointer;
+            border-bottom: solid 4px rgb(35,35,35);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 導覽列 -->
+    <div class="main-header">
+        <div class="container">
+            <h1>
+                <i class="fa-solid fa-dog">
+                    ShyKid
+                </i>
+            </h1>
+            <nav>
+                <ul class="main-menu">
+                    <li><a href="index.html">首頁<i class="fa-solid fa-house"></i></a></li>
+                    <li>
+                        <a href="">領養<i class="fa-solid fa-paw"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="">待養寵物</a></li>
+                            <li><a href="">領養資訊</a></li>
+                            <li><a href=""></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">動物百科<i class="fa-solid fa-book-open"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="vaccine.html">疫苗知識</a></li>
+                            <li><a href="disease.html">常見症狀</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">關於我們<i class="fa-regular fa-address-card"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="column-main">
+        <label for="button1" class="button" style="--i:0">專欄一</label>
+        <input type="radio" name="page" id="button1" checked>
+        <div class="page">
+            <div class="page-content">
+                <h1></h1>
+                <p></p>
+                <span></span>
+            </div>
+        </div>
+
+        <label for="button2" class="button" style="--i:1">專欄二</label>
+        <input type="radio" name="page" id="button2" checked>
+        <div class="page">
+            <div class="page-content">
+                <h1></h1>
+                <p></p>
+                <span></span>
+            </div>
+        </div>
+
+        <label for="button3" class="button" style="--i:2">專欄三</label>
+        <input type="radio" name="page" id="button3" checked>
+        <div class="page">
+            <div class="page-content">
+                <h1></h1>
+                <p></p>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 尾部區塊 -->
+    <!-- <div class="footer">
+        <div class="footer-wrap">
+            <div class="footer-box">
+                <div class="footer-content">
+                    <h3>詳細資訊</h3>
+                    <ul>
+                        <li><a href=""><i class="fa-solid fa-angle-right"></i>最新消息</a></li>
+                        <li><a href=""><i class="fa-solid fa-angle-right"></i>xxx</a></li>
+                        <li><a href=""><i class="fa-solid fa-angle-right"></i>xxx</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-box">
+                <div class="footer-content">
+                    <h3>領養資訊</h3>
+                    <ul>
+                        <li><a href=""><i class="fa-solid fa-angle-right"></i>領養布告欄</a></li>
+                        <li><a href=""><i class="fa-solid fa-angle-right"></i>發佈領養</a></li>
+                        <li><a href=""><i class="fa-solid fa-angle-right"></i>領養須知</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-box">
+                <div class="footer-content">
+                    <h3>追蹤我們</h3>
+                    <ul>
+                        <li>
+                            <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        </li>
+                        <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</body>
+
+</html>
