@@ -320,14 +320,10 @@ main .backImage .filter {
   margin-top: 150px;
   display: flex;
   justify-content: center;
-  position: relative;
 }
 .disease-main .disease-box {
   width: 400px;
   height: 300px;
-  position: relative;
-  right: 20%;
-  z-index: 1;
 }
 .disease-main .disease-box img {
   width: 400px;
@@ -342,12 +338,11 @@ main .backImage .filter {
 .disease-main .disease-secondbox {
   width: 700px;
   height: 300px;
-  position: absolute;
   top: 15%;
   right: 5%;
 }
 .disease-main .disease-secondbox h3, .disease-main .disease-secondbox p {
-  padding-left: 8rem;
+  text-align: center;
 }
 .disease-main .disease-secondbox h3 {
   font-size: 48px;

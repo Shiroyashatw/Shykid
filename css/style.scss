@@ -411,16 +411,16 @@ main {
     margin-top: 150px;
     display: flex;
     justify-content: center;
-    position: relative;
+    // position: relative;
     .disease-box {
         // justify-content: center;
         width: 400px;
         height: 300px;
         // 用背景圖 背景定位
         
-        position: relative;
-        right: 20%;
-        z-index: 1;
+        // position: relative;
+        // right: 20%;
+        // z-index: 1;
         img {
             width: 400px;
             height: 300px;
@@ -434,11 +434,12 @@ main {
         width: 700px;
         height: 300px;
         // background-color: #4E0E2E;
-        position: absolute;
+        // position: absolute;
         top: 15%;
         right: 5%;
         h3,p {
-            padding-left: 8rem;
+            text-align: center;
+            // padding-left: 8rem;
         }
         h3 {
             font-size: 48px;
