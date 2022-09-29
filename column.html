@@ -22,14 +22,13 @@
             padding: 0;
             margin: 0;
         }
-        body {
-            background-color: #000;
-        }
+        
         .column-main {
             width: 100%;
             height: 100%;
             background-color: #000;
             overflow: hidden;
+            margin-bottom: 50%;
         }
         .page {
             transform: translateX(-110%);
@@ -92,19 +91,19 @@
             display: block;
         }
         .page:nth-child(3) {
-            background-image: url(/img/dog01.jpg);
+            background-image: url(img/dogtest.jpg);
         }
         .page:nth-child(3) .page-content {
             background-color: rgb(185,130,130);
         }
         .page:nth-child(6) {
-            background-image: url(/img/dog02.jpg);
+            background-image: url(img/dog02.jpg);
         }
         .page:nth-child(6) .page-content {
             background-color: rgb(170,170,226);
         }
         .page:nth-child(9) {
-            background-image: url(/img/dog03.jpg);
+            background-image: url(img/dog03.jpg);
         }
         .page:nth-child(9) .page-content {
             background-color: rgb(236,180,110);
@@ -168,14 +167,14 @@
         <input type="radio" name="page" id="button1" checked>
         <div class="page">
             <div class="page-content">
-                <h1></h1>
-                <p></p>
-                <span></span>
+                <h1>路上發現一顆麻糬</h1>
+                <!-- <p>可愛的狗勾</p> -->
+                <span>今天在公益路上碰到一顆棉花糖</span>
             </div>
         </div>
 
         <label for="button2" class="button" style="--i:1">專欄二</label>
-        <input type="radio" name="page" id="button2" checked>
+        <input type="radio" name="page" id="button2">
         <div class="page">
             <div class="page-content">
                 <h1></h1>
@@ -185,7 +184,7 @@
         </div>
 
         <label for="button3" class="button" style="--i:2">專欄三</label>
-        <input type="radio" name="page" id="button3" checked>
+        <input type="radio" name="page" id="button3">
         <div class="page">
             <div class="page-content">
                 <h1></h1>
@@ -196,7 +195,7 @@
     </div>
 
     <!-- 尾部區塊 -->
-    <!-- <div class="footer">
+    <div class="footer">
         <div class="footer-wrap">
             <div class="footer-box">
                 <div class="footer-content">
@@ -231,7 +230,7 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 </body>
 
 </html>
