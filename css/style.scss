@@ -28,6 +28,11 @@ a {
     text-align: center;
 }
 
+// 主體背景顏色
+.backgroundColor {
+    background-color: #B47157;
+}
+
 // 主導覽列div
 .main-header {
     width: 100%;
@@ -48,7 +53,7 @@ a {
         display: flex;
         justify-content: space-between;
     }
-    
+
     .main-menu {
         display: flex;
 
@@ -74,10 +79,12 @@ a {
 
             &:hover {
                 background-color: #fff1ac;
+
                 &::after {
                     left: 0;
                     right: 0;
                 }
+
                 & .dropdown {
                     opacity: 1;
                     transition: .5s;
@@ -146,6 +153,7 @@ main {
             letter-spacing: .2rem;
             cursor: pointer;
             opacity: 1;
+
             &:hover {
                 transition: .5s;
                 background-color: #3b9a9c;
@@ -169,6 +177,7 @@ main {
 .art-title {
     margin-top: 3rem;
     text-align: center;
+
     h4 {
         font-size: 3rem;
         color: #e59572;
@@ -378,24 +387,33 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+
     .vaccine-table {
         width: 1200px;
+
         table {
             margin: auto;
-            &,th,td {
+
+            &,
+            th,
+            td {
                 border: #263859 2px solid;
                 border-collapse: collapse
             }
+
             th {
                 font-size: 26px;
                 padding: 1rem;
                 background-color: #4bc2c5;
             }
+
             td {
                 padding: .5rem .2rem;
                 font-size: 22px;
+
                 a {
                     color: #4E0E2E;
+
                     &:hover {
                         color: #e59572;
                         transition: .5s;
@@ -408,61 +426,52 @@ main {
 
 // disease 病狀網頁CSS
 .disease-main {
-    margin-top: 150px;
-    display: flex;
-    justify-content: center;
-    // position: relative;
+    margin-top: 100px;
+    // disease 主體箱子
     .disease-box {
-        // justify-content: center;
-        width: 400px;
-        height: 300px;
-        // 用背景圖 背景定位
+        display: flex;
+        width: 100%;
+        height: 400px;
+        margin-bottom: 50px;
+        position: relative;
+        // disease 文字箱子
+        .disease-textbox {
+            position: relative;
+            h3 {
+                color: #293462;
+                padding-left: 4rem;
+                font-size: 68px;
+                letter-spacing: 2rem;
+            }
+    
+            nav {
+                p {
+                    color: #fff7f7;
+                    padding-left: 2rem;
+                    font-size: 36px;
+                    letter-spacing: .5rem;
+                }
+        }
         
-        // position: relative;
-        // right: 20%;
-        // z-index: 1;
-        img {
-            width: 400px;
-            height: 300px;
-            display: block;
-            object-fit: cover;
-            object-position: center center;
-            border: #3b9a9c 4px solid;
+
+            // background-color: #4E0E2E;
         }
-    }
-    .disease-secondbox {
-        width: 700px;
-        height: 300px;
-        // background-color: #4E0E2E;
-        // position: absolute;
-        top: 15%;
-        right: 5%;
-        h3,p {
-            text-align: center;
-            // padding-left: 8rem;
-        }
-        h3 {
-            font-size: 48px;
-            color: #e59572;
-            // &::after {
-            //     content: '';
-            //     height: 3px;
-            //     width: 10rem;
-            //     background-color: #e59572;
-            //     text-align: center;
-            //     display: block;
-            // }
-        }
-        p {
-            font-size: 22px;
-            color: #0d3f67;
-            // letter-spacing: .1rem;
-            padding: .3rem 0 .3rem 8rem;
-        }
-        .disease-pbox {
-            background-color: rgba(182,137,176,.2);
-            border: rgba(182,137,176,.2) 1px solid;
-            border-radius: 20px;
+        // disease 圖片箱子
+        .disease-imgbox {
+            position: absolute;
+            z-index: 1;
+            bottom: 10%;
+            right: 5%;
+            img {
+                width: 250px;
+                height: 300px;
+                object-fit: cover;
+                object-position: center center;
+                border: #f4f0e6 6px solid;
+                box-shadow: 25px 15px 10px black;
+                transform: rotate(10deg);
+            }
+            
         }
     }
 }
