@@ -363,4 +363,69 @@ main .backImage .filter {
   border: #f4f0e6 6px solid;
   box-shadow: 25px 15px 10px black;
   transform: rotate(10deg);
+}
+
+.login-body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to left, #9c88ff, #3cadeb);
+}
+.login-body .login-main {
+  top: 100px;
+  width: 1200px;
+  height: 600px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.8);
+  display: flex;
+}
+.login-body .login-main .login-backImage {
+  width: 800px;
+  background-image: url(../img/login.png);
+  background-position: center;
+  background-size: cover;
+}
+.login-body .login-main .login-container {
+  width: 400px;
+  height: 600px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-body .login-main .login-container .login-text {
+  width: 350px;
+  height: 500px;
+}
+.login-body .login-main .login-container .login-text h1 {
+  font: 900 70px "";
+}
+.login-body .login-main .login-container .login-text .login {
+  width: 250px;
+  margin: 20px 0;
+  outline: none;
+  border: 0;
+  padding: 10px;
+  border-bottom: 3px solid rgb(80, 80, 170);
+  font: 900 32px "";
+}
+.login-body .login-main .login-container .login-text .forget {
+  color: #000;
+  float: right;
+  margin-top: 120px;
+}
+.login-body .login-main .login-container .login-text .enter {
+  width: 350px;
+  margin-top: 100px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.login-body .login-main .login-container .login-text .enter a {
+  margin: 0 25px;
+  color: #000;
+  font-size: 48px;
+  background-color: #263859;
 }/*# sourceMappingURL=style.css.map */
