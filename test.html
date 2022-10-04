@@ -5,117 +5,107 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <!-- 引用google字體 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <!--  -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 引用fontawesome icon -->
+    <script src="https://kit.fontawesome.com/da3a6ce48e.js" crossorigin="anonymous"></script>
+    <script src="js/jquery.js"></script>
+    <title>ShyKid</title>
+
     <style>
         * {
-            margin: 0;
             padding: 0;
+            margin: 0;
+        }
 
-        }
-        .main-item {
+        .main-body {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 600px;
-            /* min-height: 100vh; */
-            background-color: rgb(210,210, 220);
         }
-        .shell {
-            position: relative;
-            /* min-width: 1000px; */
+
+        button {
+            width: 70px;
+            height: 50px;
+            color: brown;
+            font-size: 24px;
+        }
+
+        .main-box {
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            transform-style: preserve-3d;
-            perspective: 900px;
         }
-        .shell .box {
-            position: relative;
-            width: 300px;
-            height: 300px;
-            transition: .3s;
-            overflow: hidden;
-            margin: 30px;
-            transform: rotateY(0);
-            transition-delay: .1s;
-            border-radius: 5px;
-            border: #fff 5px solid;
+
+        .box {
+            width: 250px;
+            height: 200px;
+            background-color: brown;
+            margin: 10px;
         }
-        .shell .box .images img {
-            width: 100%;
-        }
-        .shell:hover .box {
-            transform: rotateY(20deg);
-        }
-        .shell .box:hover {
-            transform: rotateY(0deg) scale(1.25);
-            box-shadow: 0 25px 40px rgba(0,0,0, .7);
-            z-index: 1;
-        }
-        .shell .box:hover~.box{
-            transform: rotateY(-20deg);
-        }
-        .shell .box .content {
-            position: absolute;
-            top: 0;
-            width: 90%;
-            height: 100%;
-            z-index: 999;
-            padding: 15px;
-        }
-        .shell .box .content h2 {
-            color: rgb(210,140, 140);
-            transition: .3s;
-            font-size: 20px;
-            transform: translateY(-100px);
-        }
-        .shell .box:hover .content h2 {
-            transform: translateY(-15px);
-        }
-        .shell .box .content p {
-            color: #000;
-            transition: .3s;
-            font-size: 14px;
-            transform: translateY(600px);
-            background-color: rgba(255, 255, 255, .7);
-        }
-        .shell .box:hover .content p {
-            transform: translateY(220px);
+
+        .box img {
+            width: 250px;
+            height: 200px;
+            object-fit: cover;
         }
     </style>
 </head>
 
 <body>
-    <div class="main-item">
-        <div class="shell">
-            <div class="box">
-                <div class="images">
-                    <img src="dog01.jpg" alt="" srcset="">
-                </div>
-                <div class="content">
-                    <h2>T</h2>
-                    <p>TTTTT</p>
-                </div>
-            </div>
-            <div class="box">
-                <div class="images">
-                    <img src="dog02.jpg" alt="" srcset="">
-                </div>
-                <div class="content">
-                    <h2>T</h2>
-                    <p></p>
-                </div>
-            </div>
-            <div class="box">
-                <div class="images">
-                    <img src="dog03.jpg" alt="" srcset="">
-                </div>
-                <div class="content">
-                    <h2>T</h2>
-                    <p></p>
-                </div>
-            </div>
+    <script>
+
+        $(function () {
+            var petList = [
+                { "img": "img/dog01.jpg", "title": "幼犬","age":"young" },
+                { "img": "img/dog02.jpg", "title": "成犬" },
+                { "img": "img/dog03.jpg", "title": "幼犬" },
+                { "img": "img/dog04.jpg", "title": "成犬" }
+            ]
+
+            $.each(petList, function (index, obj) {
+                var petimg = obj.img;
+                var pettitle = obj.title;
+                var imgList = `<div class="box ${pettitle}"><img class="" src="${petimg}" alt=""></div>`
+                $(".main-box").append(imgList);
+            })
+
+            $(".tag").click(function () {
+                var x = $(this).data("item");
+                console.log(x);
+                $.each(petList, function (index, obj) {
+                    var petimg = obj.img;
+                    var pettitle = obj.title;
+                    console.log(pettitle);
+
+                    if (pettitle != x) {
+                        $("." + pettitle).hide(600);
+                        $("." + x).show(600);
+                    } else {
+                        $("." + pettitle).show(600);
+                        // $("."+x).hide();
+                    }
+                })
+            })
+            // $(".tag").click(function() {
+            //     $imgList.appendTo(".main-box")
+            // })
+        })
+    </script>
+
+    <div class="main-body">
+        <div class="sidemenu">
+            <button class="tag" data-item="幼犬">幼犬</button>
+            <button class="tag" data-item="成犬">成犬</button>
         </div>
+        <div class="main-box">
+
+        </div>
+    </div>
+
+
+
     </div>
 </body>
 
