@@ -24,6 +24,7 @@
         }
 
         .main-body {
+            width: 1200px;
             display: flex;
         }
 
@@ -35,7 +36,9 @@
         }
 
         .main-box {
+            width: 1200px;
             display: flex;
+            flex-wrap: wrap;
         }
 
         .box {
@@ -43,6 +46,7 @@
             height: 200px;
             background-color: brown;
             margin: 10px;
+            display: flex;
         }
 
         .box img {
@@ -61,7 +65,13 @@
                 { "img": "img/dog01.jpg", "title": "幼犬","age":"young" },
                 { "img": "img/dog02.jpg", "title": "成犬" },
                 { "img": "img/dog03.jpg", "title": "幼犬" },
-                { "img": "img/dog04.jpg", "title": "成犬" }
+                // { "img": "img/dog04.jpg", "title": "成犬" },
+                // { "img": "img/dog04.jpg", "title": "成犬" },
+                // { "img": "img/dog04.jpg", "title": "成犬" },
+                // { "img": "img/dog04.jpg", "title": "成犬" },
+                // { "img": "img/dog04.jpg", "title": "成犬" },
+                // { "img": "img/dog04.jpg", "title": "成犬" },
+                // { "img": "img/dog04.jpg", "title": "成犬" }
             ]
             // 陣列循環取出值 顯示在網頁
             $.each(petList, function (index, obj) {

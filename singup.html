@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <!-- 引用google字體 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <!--  -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 引用fontawesome icon -->
+    <script src="https://kit.fontawesome.com/da3a6ce48e.js" crossorigin="anonymous"></script>
+    <script src="js/jquery.js"></script>
+    
+    <title>ShyKid</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .modal {
+            position: absolute;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+            background: #6a6a6aa6;
+        }
+
+        .dialog {
+            position: absolute;
+            z-index: 11;
+            /* 將對話框水平置中。 */
+            left: 50%;
+            transform: translate(-50%, 0%);
+            top: -10px;
+            /* 設定對話框的起始位置。 對話框滑動的距離與時間會影響淡入效果，可以自行嘗試調整。 */
+            opacity: 0;
+            /* 將對話框設為透明。 */
+            width: 90%;
+            /* 對話框寬度。 */
+            background: white;
+            box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            line-height: 1.7em;
+        }
+
+        .title {
+            text-align: center;
+            padding: 8px;
+            font-size: 20px;
+            background: #1f7038ad;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            color: white;
+            border: 1px #f2e6e6 solid;
+            box-shadow: 0px 2px 8px 1px rgb(0 0 0 / 15%);
+        }
+
+        .content {
+            padding: 4px 8px;
+        }
+
+        .buttons {
+            /* 加上這兩個CSS，可以讓button移動到對話框下方。 */
+            /*position: absolute;
+  right: 0px;
+  */
+            text-align: right;
+            padding: 8px 14px;
+        }
+
+        .okBtn {
+            display: inline-block;
+            background: #092b68b3;
+            color: #ffffffeb;
+            border-radius: 8px;
+            border: 1px solid white;
+            padding: 4px 8px;
+            cursor: pointer;
+        }
+
+        .cancelBtn {
+            display: inline-block;
+            background: #e90202ad;
+            color: #ffffffeb;
+            border-radius: 8px;
+            border: 1px solid white;
+            padding: 4px 8px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- <div class="login-body">
+        <div class="login-main">
+            <div class="login-backImage"></div>
+            <div class="login-container">
+                <div class="login-text">
+                    <h1>登入</h1>
+                    <input type="text" class="login" placeholder="帳號">
+                    <input type="password" class="login" placeholder="密碼">
+                    
+                    <a href="" class="forget">沒有帳號?</a>
+                    <a href="" class="forget">忘記密碼?</a>
+                    <div class="enter">
+                        <a href="" class="enter">登入</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <button class="showDialogBtn" style="margin: 30px;">show dialog</button>
+
+    <button class="showDialogBtn2" style="margin: 30px;">show dialog2</button>
+
+
+    <script src="js/remenber.js"></script>
+
+</body>
+
+
+</html>
