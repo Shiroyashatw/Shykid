@@ -128,10 +128,10 @@ a {
     .main-menu {
         display: flex;
         li {
+            // display: block;
             font-size: 20px;
             position: relative;
             transition: .5s;
-
             ul li {
                 min-width: 150px;
             }
@@ -156,6 +156,7 @@ a {
                 }
 
                 & .dropdown {
+                    display: block;
                     opacity: 1;
                     transition: .5s;
                 }
@@ -178,6 +179,7 @@ a {
         }
 
         .dropdown {
+            display: none;
             opacity: 0;
             position: absolute;
             background-color: #fff;
@@ -364,7 +366,7 @@ main {
 
 // 底部置底版面
 .footer {
-    margin-top: 100px;
+    // margin-top: 100px;
     background-color: #263859;
     height: 230px;
 
@@ -372,7 +374,7 @@ main {
     .footer-wrap {
         // width: 100%;
         padding: 15px 25px;
-        margin: 20px;
+        // margin: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -818,4 +820,33 @@ main {
 
     }
 
+}
+
+// forum 討論區畫面 css
+.forum-main {
+    display: flex;
+    
+    .forum-sidemenu {
+        width: 300px;
+        height: 100vh;
+        background-color: #854836;
+        color: #fff;
+        font-size: 42px;
+        nav {
+            padding: 1.5rem 0;
+            text-align: center;
+            li {
+                padding: 10px 0;
+                &:hover {
+                    color: #263859;
+                    transition: .5s;
+                }
+            }
+        }
+        
+        h6 {
+            text-align: center;
+            font-size: 48px;
+        }
+    }
 }

@@ -141,6 +141,7 @@ a {
   right: 0;
 }
 .main-header .main-menu li:hover .dropdown {
+  display: block;
   opacity: 1;
   transition: 0.5s;
 }
@@ -157,6 +158,7 @@ a {
   padding-left: 2px;
 }
 .main-header .main-menu .dropdown {
+  display: none;
   opacity: 0;
   position: absolute;
   background-color: #fff;
@@ -293,13 +295,11 @@ main .backImage .filter {
 }
 
 .footer {
-  margin-top: 100px;
   background-color: #263859;
   height: 230px;
 }
 .footer .footer-wrap {
   padding: 15px 25px;
-  margin: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -625,4 +625,30 @@ main .backImage .filter {
   height: 0;
   font-size: 32px;
   cursor: pointer;
+}
+
+.forum-main {
+  display: flex;
+}
+.forum-main .forum-sidemenu {
+  width: 300px;
+  height: 100vh;
+  background-color: #854836;
+  color: #fff;
+  font-size: 42px;
+}
+.forum-main .forum-sidemenu nav {
+  padding: 1.5rem 0;
+  text-align: center;
+}
+.forum-main .forum-sidemenu nav li {
+  padding: 10px 0;
+}
+.forum-main .forum-sidemenu nav li:hover {
+  color: #263859;
+  transition: 0.5s;
+}
+.forum-main .forum-sidemenu h6 {
+  text-align: center;
+  font-size: 48px;
 }/*# sourceMappingURL=style.css.map */
