@@ -28,11 +28,14 @@
             display: flex;
         }
 
-        button {
-            width: 70px;
-            height: 50px;
-            color: brown;
-            font-size: 24px;
+        button.on {
+            background: black;
+            color: white;
+        }
+
+        button.off {
+            background: lightgray;
+            color: gray;
         }
 
         .main-box {
@@ -91,10 +94,10 @@
 
     <div class="main-body">
         <div class="sidemenu">
-            <input type="radio" class="tag" name="sex" data-item="幼犬" id="">幼犬
-            <input type="radio" class="tag" name="sex" data-item="成犬" id="">成犬
-            <input type="radio" class="tag" name="vac" data-item="five" id="">5
-            <input type="radio" class="tag" name="vac" data-item="eight" id="">8
+            <button type="radio" class="tag" name="sex" data-item="幼犬" id="">幼犬</button>
+            <button type="radio" class="tag" name="sex" data-item="成犬" id="">成犬</button>
+            <button type="radio" class="tag" name="vac" data-item="five" id="">5</button>
+            <button type="radio" class="tag" name="vac" data-item="eight" id="">8</button>
         </div>
         <div class="main-box">
 
@@ -142,73 +145,60 @@
     <script>
 
         $(function () {
+
             var petList = [
-                { "title": "幼犬", "vac": "five" },
-                { "title": "幼犬", "vac": "eight" },
-                { "title": "成犬", "vac": "five" },
-                { "title": "成犬", "vac": "eight" },
+                { "title": "幼犬五合一", "age": "幼犬", "vac": "five" },
+                { "title": "幼犬八合一", "age": "幼犬", "vac": "eight" },
+                { "title": "成犬五合一", "age": "成犬", "vac": "five" },
+                { "title": "成犬八合一", "age": "成犬", "vac": "eight" },
                 // { "img": "img/dog04.jpg", "title": "成犬" },
             ]
             // 陣列循環取出值 顯示在網頁
             $.each(petList, function (index, obj) {
                 // var petimg = obj.img;
-                var pettitle = obj.title;
+                var pettitle = obj.title
+                var petage = obj.age;
                 var petvac = obj.vac;
 
                 // var age = '';
                 // if (obj.age != null) {
                 //     age = `<h1>${obj.age}</h1>`
                 // }
-                let imgList = `<div class="box" race="${pettitle}" vac="${petvac}"><h1>${pettitle}</h1></div>`
+                let imgList = `<div class="box ${petage} ${petvac}"><h1>${pettitle}</h1></div>`
                 $(".main-box").append(imgList);
             })
 
+            // 點擊時顯示對應選項 隱藏其他 
             $(".tag").click(function () {
                 // 點擊時取得對應data-itme值
                 var x = $(this).data("item");
-                var y = $('.box').each(function () {
-                    var test = $(this).attr("race")
-                    console.log(test)
-                    if (test != x) {
-                        $(".box").hide(600);
-                        $("." + x).show(600);
-                    } else {
-                        $("." + test).show(600);
-                    }
+                $("div.box." + x).show(600);
+                $("div.box").not("." + x).hide(600);
+                // var y = $('.box').each(function () {
+                //     var race = $(this).attr("race");
+                //     console.log(race);
+                //     if (race != x) {
+                //         $(`[race = ${race}]`).hide(600);
+                //         // 點擊的選項顯示
+                //         $([`[race = ${x}]`]).show(600);
+                //     } else {
+                //         $(`[race = ${race}]`).show(600);
+                //         // $([`[race = ${x}]`]).hide(600);
+                //     }
 
-                });
+                // });
 
             })
-            // $(".tag").click(function () {
-            //     var x = $(this).data("item");
-            //     console.log(x);
-            //     $.each(petList, function (index, obj) {
-            //         var petimg = obj.img;
-            //         var pettitle = obj.title;
-            //         var petvac = obj.vac;
-            //         // console.log(pettitle);
 
-            //         if (pettitle != x) {
-            //             $("." + pettitle).hide(600);
-            //             $("." + x).show(600);
-            //         } else {
-            //             $("." + pettitle).show(600);
-            //         }
-
-            //         if (petvac != x) {
-            //             $("." + petvac).hide(600);
-            //             $("." + x).show(600);
-            //         } else {
-            //             $("." + petvac).show(600);
-            //         }
-
-            //     })
-            // })
-            // $(".tag").click(function() {
-            //     $imgList.appendTo(".main-box")
-            // })
         })
+        
+        $('button').on('click', function () {
+            $('button').removeClass('on').addClass('off');
+            $(this).removeClass('off').addClass('on');
+        });
     </script>
+
+
 
 </body>
 

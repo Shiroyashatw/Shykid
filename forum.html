@@ -43,7 +43,7 @@
                             <li><a href="disease.html">常見症狀</a></li>
                         </ul>
                     </li>
-                    <li><a href="forum.html">討論區<i class="fa-solid fa-bone"></i></a>
+                    <li><a href="">討論區<i class="fa-solid fa-bone"></i></a>
                         <ul class="dropdown">
                             <li><a href="column.html">專欄報導</a></li>
                             <li><a href=""></a></li>
@@ -57,59 +57,46 @@
         </div>
     </div>
 
-    <!-- 頭部圖片顯示 -->
-    <main>
-        <section class="backImage">
-            <div class="filter"></div>
-            <h3>可以讓你分享領養資訊，想領養或了解狗、想曬自家毛小孩
-                <br>
-                一個讓大家討論的地方
-            </h3>
-            <button class="start"><a href="singup.html" target="_blank" rel="noopener noreferrer">歡迎加入</a></button>
-        </section>
-    </main>
-
-    <div class="art-title">
-        <h4>
-            關於我們
-        </h4>
-    </div>
-
-    <!-- 中間圖檔顯示 -->
-    <div class="main-item">
-        <div class="shell">
-            <div class="box">
-                <div class="images">
-                    <img src="img/dog01.jpg" alt="" srcset="">
-                </div>
-                <div class="content">
-                    <h2><a href="">分享領養</a></h2>
-                    <p>分享需要新主人的狗狗資訊、從路邊救援、自家新出生小狗等等</p>
-                </div>
-            </div>
-            <div class="box">
-                <div class="images">
-                    <img src="img/dog02.jpg" alt="" srcset="">
-                </div>
-                <div class="content">
-                    <h2><a href="">我想領養</a></h2>
-                    <p>想多一個動物陪伴、已經了解身為主人的義務與責任，並可以負責照顧</p>
-                </div>
-            </div>
-            <div class="box">
-                <div class="images">
-                    <img src="img/dog03.jpg" alt="" srcset="">
-                </div>
-                <div class="content">
-                    <h2><a href="">我想曬狗</a></h2>
-                    <p>
-                        我想曬自家毛小孩，不論是照片、還是心得，可以一起討論
-                    </p>
-                </div>
-            </div>
+    <div class="forum-main">
+        <div class="forum-sidemenu">
+            <nav>
+                <ul>
+                    <li ><button class="tag" data-tag="import" >公告</button></li>
+                    <li>專欄報導</li>
+                </ul>
+            </nav>
+            <h6>看板</h6>
+            <nav>
+                <ul>
+                    <li>心得</li>
+                    <li>影片</li>
+                    <li>寄養</li>
+                    <li>走失</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="forum-text">
+            <h1 race="import">Test</h1>
+            <h1 race="video">Test</h1>
+            <h1 race="post">Test</h1>
         </div>
     </div>
 
+    <script>
+        $(function() {
+            // $(".forum-text").hide();
+
+            $(".tag").click(function(){
+                var tag = $(this).data("tag")
+                var text = `<h1 race="${tag}">Test</h1>`
+                // $(".forum-text").empty();
+                if($(`[race = ${tag}]`)) {
+                    $(".forum-text").append(text);
+                }
+                
+            })
+        })
+    </script>
     <!-- 尾部區塊 -->
     <div class="footer">
         <div class="footer-wrap">
@@ -148,5 +135,3 @@
         </div>
     </div>
 </body>
-
-</html>
