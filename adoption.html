@@ -16,6 +16,45 @@
     <script src="https://kit.fontawesome.com/da3a6ce48e.js" crossorigin="anonymous"></script>
     <script src="js/jquery.js"></script>
     <title>ShyKid</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .main-body {
+            width: 1200px;
+            display: flex;
+        }
+
+        button {
+            width: 70px;
+            height: 50px;
+            color: brown;
+            font-size: 24px;
+        }
+
+        .main-box {
+            width: 1200px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            width: 250px;
+            height: 200px;
+            background-color: wheat;
+            margin: 10px;
+            display: flex;
+        }
+
+        .box img {
+            width: 250px;
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
 </head>
 
 <body>
@@ -50,18 +89,17 @@
         </div>
     </div>
 
-    <div class="adoption-main">
-        <div class="adoption-sidemenu">
-            <input class="Sex" type="radio">公
-            <input class="Sex" type="radio">母
-            <input class="Sex" type="radio">All
+    <div class="main-body">
+        <div class="sidemenu">
+            <input type="radio" class="tag" name="sex" data-item="幼犬" id="">幼犬
+            <input type="radio" class="tag" name="sex" data-item="成犬" id="">成犬
+            <input type="radio" class="tag" name="vac" data-item="five" id="">5
+            <input type="radio" class="tag" name="vac" data-item="eight" id="">8
         </div>
-        <div class="adoption-container">
-            <div class="adoption-imgbox"></div>
-            <div class="adoption-imgbox"></div>
-            <div class="adoption-imgbox"></div>
+        <div class="main-box">
+
         </div>
-    </div>    
+    </div>
 
     <!-- 尾部區塊 -->
     <div class="footer">
@@ -100,6 +138,78 @@
             </div>
         </div>
     </div>
+
+    <script>
+
+        $(function () {
+            var petList = [
+                { "title": "幼犬", "vac": "five" },
+                { "title": "幼犬", "vac": "eight" },
+                { "title": "成犬", "vac": "five" },
+                { "title": "成犬", "vac": "eight" },
+                // { "img": "img/dog04.jpg", "title": "成犬" },
+            ]
+            // 陣列循環取出值 顯示在網頁
+            $.each(petList, function (index, obj) {
+                // var petimg = obj.img;
+                var pettitle = obj.title;
+                var petvac = obj.vac;
+
+                // var age = '';
+                // if (obj.age != null) {
+                //     age = `<h1>${obj.age}</h1>`
+                // }
+                let imgList = `<div class="box" race="${pettitle}" vac="${petvac}"><h1>${pettitle}</h1></div>`
+                $(".main-box").append(imgList);
+            })
+
+            $(".tag").click(function () {
+                // 點擊時取得對應data-itme值
+                var x = $(this).data("item");
+                var y = $('.box').each(function () {
+                    var test = $(this).attr("race")
+                    console.log(test)
+                    if (test != x) {
+                        $(".box").hide(600);
+                        $("." + x).show(600);
+                    } else {
+                        $("." + test).show(600);
+                    }
+
+                });
+
+            })
+            // $(".tag").click(function () {
+            //     var x = $(this).data("item");
+            //     console.log(x);
+            //     $.each(petList, function (index, obj) {
+            //         var petimg = obj.img;
+            //         var pettitle = obj.title;
+            //         var petvac = obj.vac;
+            //         // console.log(pettitle);
+
+            //         if (pettitle != x) {
+            //             $("." + pettitle).hide(600);
+            //             $("." + x).show(600);
+            //         } else {
+            //             $("." + pettitle).show(600);
+            //         }
+
+            //         if (petvac != x) {
+            //             $("." + petvac).hide(600);
+            //             $("." + x).show(600);
+            //         } else {
+            //             $("." + petvac).show(600);
+            //         }
+
+            //     })
+            // })
+            // $(".tag").click(function() {
+            //     $imgList.appendTo(".main-box")
+            // })
+        })
+    </script>
+
 </body>
 
 </html>

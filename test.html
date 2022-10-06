@@ -62,8 +62,8 @@
 
         $(function () {
             var petList = [
-                { "img": "img/dog01.jpg", "title": "幼犬","age":"young" },
-                { "img": "img/dog02.jpg", "title": "成犬" },
+                { "img": "img/dog01.jpg", "title": "幼犬","age":null },
+                { "img": "img/dog02.jpg", "title": "成犬","age":"young" },
                 { "img": "img/dog03.jpg", "title": "幼犬" },
                 // { "img": "img/dog04.jpg", "title": "成犬" },
                 // { "img": "img/dog04.jpg", "title": "成犬" },
@@ -77,7 +77,12 @@
             $.each(petList, function (index, obj) {
                 var petimg = obj.img;
                 var pettitle = obj.title;
-                var imgList = `<div class="box ${pettitle}"><img class="" src="${petimg}" alt=""></div>`
+                var age = '';
+                if (obj.age != null) {
+                    age = `<h1>${obj.age}</h1>`
+                }
+                console.log(age);
+                var imgList = `${age}<div class="box ${pettitle}"><img class="" src="${petimg}" alt=""></div>`
                 $(".main-box").append(imgList);
             })
 

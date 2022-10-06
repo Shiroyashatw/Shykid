@@ -15,118 +15,86 @@
     <!-- 引用fontawesome icon -->
     <script src="https://kit.fontawesome.com/da3a6ce48e.js" crossorigin="anonymous"></script>
     <script src="js/jquery.js"></script>
-    
+
     <title>ShyKid</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
 
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        .modal {
-            position: absolute;
-            z-index: 10;
-            width: 100%;
-            height: 100%;
-            background: #6a6a6aa6;
-        }
-
-        .dialog {
-            position: absolute;
-            z-index: 11;
-            /* 將對話框水平置中。 */
-            left: 50%;
-            transform: translate(-50%, 0%);
-            top: -10px;
-            /* 設定對話框的起始位置。 對話框滑動的距離與時間會影響淡入效果，可以自行嘗試調整。 */
-            opacity: 0;
-            /* 將對話框設為透明。 */
-            width: 90%;
-            /* 對話框寬度。 */
-            background: white;
-            box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            line-height: 1.7em;
-        }
-
-        .title {
-            text-align: center;
-            padding: 8px;
-            font-size: 20px;
-            background: #1f7038ad;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-            color: white;
-            border: 1px #f2e6e6 solid;
-            box-shadow: 0px 2px 8px 1px rgb(0 0 0 / 15%);
-        }
-
-        .content {
-            padding: 4px 8px;
-        }
-
-        .buttons {
-            /* 加上這兩個CSS，可以讓button移動到對話框下方。 */
-            /*position: absolute;
-  right: 0px;
-  */
-            text-align: right;
-            padding: 8px 14px;
-        }
-
-        .okBtn {
-            display: inline-block;
-            background: #092b68b3;
-            color: #ffffffeb;
-            border-radius: 8px;
-            border: 1px solid white;
-            padding: 4px 8px;
-            cursor: pointer;
-        }
-
-        .cancelBtn {
-            display: inline-block;
-            background: #e90202ad;
-            color: #ffffffeb;
-            border-radius: 8px;
-            border: 1px solid white;
-            padding: 4px 8px;
-            cursor: pointer;
-        }
-    </style>
 
 </head>
 
 <body>
 
-    <!-- <div class="login-body">
-        <div class="login-main">
-            <div class="login-backImage"></div>
-            <div class="login-container">
-                <div class="login-text">
-                    <h1>登入</h1>
-                    <input type="text" class="login" placeholder="帳號">
-                    <input type="password" class="login" placeholder="密碼">
+    <!-- 導覽列 -->
+    <div class="main-header">
+        <div class="container">
+            <h1>
+                <i class="fa-solid fa-dog">
+                    ShyKid
+                </i>
+            </h1>
+            <nav>
+                <ul class="main-menu">
+                    <li><a href="index.html">首頁<i class="fa-solid fa-house"></i></a></li>
+                    <li>
+                        <a href="">領養<i class="fa-solid fa-paw"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="">領養資訊</a></li>
+                            <li><a href=""></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">動物百科<i class="fa-solid fa-book-open"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="vaccine.html">疫苗知識</a></li>
+                            <li><a href="disease.html">常見症狀</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">討論區<i class="fa-solid fa-bone"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="column.html">專欄報導</a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">關於我們<i class="fa-regular fa-address-card"></i></a></li>
+                    <li><a href="">登入/註冊<i class="fa-regular fa-address-card"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="singup-body">
+        <div class="singup-main">
+            <div class="singup-container">
+                <form action="" method="post">
+                    <h1>註冊</h1>
                     
-                    <a href="" class="forget">沒有帳號?</a>
-                    <a href="" class="forget">忘記密碼?</a>
-                    <div class="enter">
-                        <a href="" class="enter">登入</a>
-                    </div>
+                    <label for="">帳號:</label>
+                    <input type="text">
 
+                    <br/>
+                    <label for="">密碼:</label>
+                    <input type="password">
+
+                    <br/>
+                    <label for="">信箱:</label>
+                    <input type="email">
+                </form>
+                <div class="memberbox">
+                    
+                <button class="memberBtn">服務條款
+                </button>
+                <input type="checkbox" name="" id="">
+                </div>
+                <div class="enter">
+                    <a href="" class="enter">註冊</a>
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
-    <button class="showDialogBtn" style="margin: 30px;">show dialog</button>
+    <!-- <button class="showDialogBtn" style="margin: 30px;">show dialog</button>
 
-    <button class="showDialogBtn2" style="margin: 30px;">show dialog2</button>
+    <button class="showDialogBtn2" style="margin: 30px;">show dialog2</button> -->
 
 
     <script src="js/remenber.js"></script>
