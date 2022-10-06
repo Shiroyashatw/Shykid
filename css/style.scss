@@ -119,7 +119,7 @@ a {
 
     // 次導覽列nav
     .container {
-        width: 1200px;
+        // width: 1200px;
         margin: auto;
         display: flex;
         justify-content: space-between;
@@ -127,6 +127,10 @@ a {
 
     .main-menu {
         display: flex;
+        // nav {
+        //     // justify-content: right;
+        //     // align-items: right;
+        // }
         li {
             // display: block;
             font-size: 20px;
