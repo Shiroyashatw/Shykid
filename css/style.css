@@ -1,7 +1,9 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
   list-style: none;
+  box-sizing: border-box;
   font-family: "Noto Sans TC", sans-serif;
 }
 
@@ -13,6 +15,70 @@ a {
   color: white;
   display: block;
   text-decoration: none;
+}
+
+.modal {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background: rgba(106, 106, 106, 0.6509803922);
+}
+
+.dialog {
+  position: absolute;
+  z-index: 11;
+  /* 將對話框水平置中。 */
+  left: 50%;
+  transform: translate(-50%, 0%);
+  top: -10px;
+  /* 設定對話框的起始位置。 對話框滑動的距離與時間會影響淡入效果，可以自行嘗試調整。 */
+  opacity: 0;
+  /* 將對話框設為透明。 */
+  width: 90%;
+  /* 對話框寬度。 */
+  background: white;
+  box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  line-height: 1.7em;
+}
+
+.title {
+  text-align: center;
+  padding: 8px;
+  font-size: 20px;
+  background: rgba(31, 112, 56, 0.6784313725);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: white;
+  border: 1px #f2e6e6 solid;
+  box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.15);
+}
+
+.buttons {
+  /* 加上這兩個CSS，可以讓button移動到對話框下方。 */
+  text-align: right;
+  padding: 8px 14px;
+}
+
+.okBtn {
+  display: inline-block;
+  background: rgba(9, 43, 104, 0.7019607843);
+  color: rgba(255, 255, 255, 0.9215686275);
+  border-radius: 8px;
+  border: 1px solid white;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.cancelBtn {
+  display: inline-block;
+  background: rgba(233, 2, 2, 0.6784313725);
+  color: rgba(255, 255, 255, 0.9215686275);
+  border-radius: 8px;
+  border: 1px solid white;
+  padding: 4px 8px;
+  cursor: pointer;
 }
 
 .vertical-center {
@@ -210,6 +276,7 @@ main .backImage .filter {
   height: 100%;
   z-index: 999;
   padding: 15px;
+  box-sizing: content-box;
 }
 .main-item .shell .box .content h2 a {
   color: rgb(210, 140, 140);
@@ -371,12 +438,12 @@ main .backImage .filter {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(to left, #9c88ff, #3cadeb);
+  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
 }
 .login-body .login-main {
   top: 100px;
   width: 1200px;
-  height: 600px;
+  height: 500px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.8);
   display: flex;
 }
@@ -388,7 +455,7 @@ main .backImage .filter {
 }
 .login-body .login-main .login-container {
   width: 400px;
-  height: 600px;
+  height: 500px;
   background-color: #fff;
   display: flex;
   justify-content: center;
@@ -422,7 +489,7 @@ main .backImage .filter {
 }
 .login-body .login-main .login-container .login-text .enter {
   width: 350px;
-  margin-top: 80px;
+  margin-top: 60px;
   display: flex;
   text-align: center;
   justify-content: center;
@@ -438,4 +505,124 @@ main .backImage .filter {
   color: #263859;
   background-color: #f4f0e6;
   transition: 0.5s;
+}
+.login-body .login-main .singup-container {
+  width: 800px;
+  height: 500px;
+  display: flex;
+  background-color: #fff;
+}
+.login-body .login-main .singup-container h1 {
+  font-size: 72px;
+  padding-left: 4rem;
+}
+.login-body .login-main .singup-container label {
+  font-size: 36px;
+}
+.login-body .login-main .singup-container input {
+  width: 250px;
+  margin: 30px 1rem;
+  outline: none;
+  border: 0;
+  padding: 5px;
+  border-bottom: 3px solid rgb(80, 80, 170);
+  font: 900 32px "";
+}
+.login-body .login-main .singup-container .enter {
+  width: 350px;
+  margin-top: 60px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.login-body .login-main .singup-container .enter a {
+  color: #f4f0e6;
+  font-size: 36px;
+  background-color: #263859;
+  border-radius: 20px;
+}
+.login-body .login-main .singup-container .enter a:hover {
+  color: #263859;
+  background-color: #f4f0e6;
+  transition: 0.5s;
+}
+
+.singup-body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+}
+.singup-body .singup-main {
+  top: 100px;
+  width: 600px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.8);
+  display: flex;
+}
+.singup-body .singup-main .singup-container {
+  width: 600px;
+  display: flex;
+  background-color: #fff;
+  flex-wrap: wrap;
+}
+.singup-body .singup-main .singup-container form {
+  margin: auto;
+}
+.singup-body .singup-main .singup-container h1 {
+  text-align: center;
+  font-size: 72px;
+}
+.singup-body .singup-main .singup-container label {
+  font-size: 36px;
+}
+.singup-body .singup-main .singup-container input {
+  width: 350px;
+  margin: 20px 1rem;
+  outline: none;
+  border: 0;
+  padding: 5px;
+  border-bottom: 3px solid rgb(80, 80, 170);
+  font: 900 24px "";
+}
+.singup-body .singup-main .singup-container .enter {
+  width: 350px;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.singup-body .singup-main .singup-container .enter a {
+  color: #f4f0e6;
+  font-size: 36px;
+  background-color: #263859;
+  border-radius: 20px;
+}
+.singup-body .singup-main .singup-container .enter a:hover {
+  color: #263859;
+  background-color: #f4f0e6;
+  transition: 0.5s;
+}
+.singup-body .singup-main .singup-container .memberbox {
+  width: 300px;
+  margin: auto;
+  text-align: center;
+}
+.singup-body .singup-main .singup-container .memberbox input {
+  margin: 0;
+  width: 32px;
+  height: 24px;
+}
+.singup-body .singup-main .singup-container .memberbox .memberBtn {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  color: #4E0E2E;
+  background-color: #263859;
+  height: 0;
+  font-size: 32px;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

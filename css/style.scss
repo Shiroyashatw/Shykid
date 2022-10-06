@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     list-style: none;
+    box-sizing: border-box;
     // box-sizing: border-box;
     font-family: 'Noto Sans TC', sans-serif;
 }
@@ -14,6 +15,76 @@ a {
     color: white;
     display: block;
     text-decoration: none;
+}
+
+// Js 跳出框 隱藏背景
+.modal {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background: #6a6a6aa6;
+}
+
+// JS跳出框 框架
+.dialog {
+    position: absolute;
+    z-index: 11;
+    /* 將對話框水平置中。 */
+    left: 50%;
+    transform: translate(-50%, 0%);
+    top: -10px;
+    /* 設定對話框的起始位置。 對話框滑動的距離與時間會影響淡入效果，可以自行嘗試調整。 */
+    opacity: 0;
+    /* 將對話框設為透明。 */
+    width: 90%;
+    /* 對話框寬度。 */
+    background: white;
+    box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    line-height: 1.7em;
+}
+
+// Js框架 標題
+.title {
+    text-align: center;
+    padding: 8px;
+    font-size: 20px;
+    background: #1f7038ad;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: white;
+    border: 1px #f2e6e6 solid;
+    box-shadow: 0px 2px 8px 1px rgb(0 0 0 / 15%);
+}
+
+// JS 跳出框 按鈕CSS
+.buttons {
+    /* 加上這兩個CSS，可以讓button移動到對話框下方。 */
+    // position: absolute;
+    // right: 0px;
+    text-align: right;
+    padding: 8px 14px;
+}
+
+.okBtn {
+    display: inline-block;
+    background: #092b68b3;
+    color: #ffffffeb;
+    border-radius: 8px;
+    border: 1px solid white;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.cancelBtn {
+    display: inline-block;
+    background: #e90202ad;
+    color: #ffffffeb;
+    border-radius: 8px;
+    border: 1px solid white;
+    padding: 4px 8px;
+    cursor: pointer;
 }
 
 // 文字垂直
@@ -56,7 +127,6 @@ a {
 
     .main-menu {
         display: flex;
-
         li {
             font-size: 20px;
             position: relative;
@@ -205,7 +275,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
     .shell {
         position: relative;
         display: flex;
@@ -213,7 +283,7 @@ main {
         flex-wrap: wrap;
         transform-style: preserve-3d;
         perspective: 900px;
-
+        
         &:hover {
             .box {
                 transform: rotateY(20deg);
@@ -232,7 +302,7 @@ main {
             transition-delay: .1s;
             border-radius: 5px;
             border: #000 3px solid;
-
+            
             &:hover {
                 background-color: #f4f0e6;
                 transition: .5s;
@@ -272,7 +342,7 @@ main {
                 height: 100%;
                 z-index: 999;
                 padding: 15px;
-
+                box-sizing: content-box;
                 h2 a {
                     color: rgba(210, 140, 140);
                     transition: .3s;
@@ -427,6 +497,7 @@ main {
 // disease 病狀網頁CSS
 .disease-main {
     margin-top: 100px;
+
     // disease 主體箱子
     .disease-box {
         display: flex;
@@ -434,16 +505,18 @@ main {
         height: 400px;
         margin-bottom: 50px;
         position: relative;
+
         // disease 文字箱子
         .disease-textbox {
             position: relative;
+
             h3 {
                 color: #293462;
                 padding-left: 4rem;
                 font-size: 68px;
                 letter-spacing: 2rem;
             }
-    
+
             nav {
                 p {
                     color: #fff7f7;
@@ -451,17 +524,19 @@ main {
                     font-size: 36px;
                     letter-spacing: .5rem;
                 }
-        }
-        
+            }
+
 
             // background-color: #4E0E2E;
         }
+
         // disease 圖片箱子
         .disease-imgbox {
             position: absolute;
             z-index: 1;
             bottom: 10%;
             right: 5%;
+
             img {
                 width: 250px;
                 height: 300px;
@@ -471,68 +546,80 @@ main {
                 box-shadow: 25px 15px 10px black;
                 transform: rotate(10deg);
             }
-            
+
         }
     }
 }
 
-// login 登入畫面 css
+// login / singup 登入畫面 css
 .login-body {
     width: 100%;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to left,#9c88ff,#3cadeb);
+    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+
+    // 登入 login / 註冊 singup 頁面主體
     .login-main {
         // position: relative;
         top: 100px;
         width: 1200px;
-        height: 600px;
+        height: 500px;
         box-shadow: 0 15px 25px rgba(0, 0, 0, .8);
         display: flex;
+
+        // 登入頁面背景圖
         .login-backImage {
             width: 800px;
             background-image: url(../img/login.png);
             background-position: center;
             background-size: cover;
         }
+
+        // 登入頁面文字欄
         .login-container {
             width: 400px;
-            height: 600px;
+            height: 500px;
             background-color: #fff;
             display: flex;
             justify-content: center;
             align-items: center;
+
             .login-text {
                 width: 350px;
                 height: 500px;
+
                 h1 {
                     font: 900 70px '';
                 }
+
                 .login {
                     width: 250px;
                     margin: 20px 0;
                     outline: none;
                     border: 0;
                     padding: 10px;
-                    border-bottom: 3px solid rgb(80,80,170);
+                    border-bottom: 3px solid rgb(80, 80, 170);
                     font: 900 32px '';
                 }
+
                 .forget {
                     font-size: 24px;
                     color: #000;
                     float: right;
                     margin: 0 10px;
+
                     // margin-top: 120px ;
                     &:hover {
                         color: #3cadeb;
                         transition: .5s;
                     }
                 }
+
                 .enter {
                     width: 350px;
-                    margin-top: 80px;
+                    margin-top: 60px;
                     // position: absolute;
                     // margin: 15px 0;
                     // bottom: 40px;
@@ -542,14 +629,16 @@ main {
                     // text-decoration: none;
                     // background-image: linear-gradient(to left,#9c88ff,#3cadeb);
                     text-align: center;
-                    justify-content: center;    
+                    justify-content: center;
                     align-items: center;
+
                     a {
                         // margin: 0 5px;
                         color: #f4f0e6;
                         font-size: 36px;
                         background-color: #263859;
                         border-radius: 20px;
+
                         &:hover {
                             color: #263859;
                             background-color: #f4f0e6;
@@ -559,6 +648,174 @@ main {
                 }
             }
         }
+
+        .singup-container {
+            width: 800px;
+            height: 500px;
+            display: flex;
+            background-color: #fff;
+
+            h1 {
+                font-size: 72px;
+                padding-left: 4rem;
+            }
+
+            label {
+                font-size: 36px;
+            }
+
+            input {
+                width: 250px;
+                margin: 30px 1rem;
+                outline: none;
+                border: 0;
+                padding: 5px;
+                border-bottom: 3px solid rgb(80, 80, 170);
+                font: 900 32px '';
+            }
+
+            .enter {
+                width: 350px;
+                margin-top: 60px;
+                // position: absolute;
+                // margin: 15px 0;
+                // bottom: 40px;
+                display: flex;
+                // display: block;
+                // font: 900 40px '';
+                // text-decoration: none;
+                // background-image: linear-gradient(to left,#9c88ff,#3cadeb);
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+
+                a {
+                    // margin: 0 5px;
+                    color: #f4f0e6;
+                    font-size: 36px;
+                    background-color: #263859;
+                    border-radius: 20px;
+
+                    &:hover {
+                        color: #263859;
+                        background-color: #f4f0e6;
+                        transition: .5s;
+                    }
+                }
+            }
+        }
+
     }
+
 }
 
+// singup 登入畫面 css
+.singup-body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+
+    // 登入 login / 註冊 singup 頁面主體
+    .singup-main {
+        // position: relative;
+        top: 100px;
+        width: 600px;
+        // height: 600px;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, .8);
+        display: flex;
+
+        // 註冊頁面文字欄
+        .singup-container {
+
+            width: 600px;
+            // height: 500px;
+            display: flex;
+            background-color: #fff;
+            flex-wrap: wrap;
+
+            form {
+                margin: auto;
+            }
+
+            h1 {
+                text-align: center;
+                font-size: 72px;
+                // padding-left: 4rem;
+            }
+
+            label {
+                font-size: 36px;
+            }
+
+            input {
+                width: 350px;
+                margin: 20px 1rem;
+                outline: none;
+                border: 0;
+                padding: 5px;
+                border-bottom: 3px solid rgb(80, 80, 170);
+                font: 900 24px '';
+            }
+
+            .enter {
+                width: 350px;
+                margin: 1rem auto;
+                // position: absolute;
+                // margin: 15px 0;
+                // bottom: 40px;
+                display: flex;
+                // font: 900 40px '';
+                // text-decoration: none;
+                // background-image: linear-gradient(to left,#9c88ff,#3cadeb);
+                justify-content: center;
+                align-items: center;
+
+                a {
+                    // margin: 0 2rem;  
+                    color: #f4f0e6;
+                    font-size: 36px;
+                    background-color: #263859;
+                    border-radius: 20px;
+
+                    &:hover {
+                        color: #263859;
+                        background-color: #f4f0e6;
+                        transition: .5s;
+                    }
+                }
+            }
+
+            .memberbox {
+                width: 300px;
+                margin: auto;
+                text-align: center;
+                input {
+                    margin: 0;
+                    width: 32px;
+                    height: 24px;
+                }
+
+                .memberBtn {
+                    background: none;
+                    border: none;
+                    margin: 0;
+                    padding: 0;
+                    color: #4E0E2E;
+                    background-color: #263859;
+                    // width: 0;
+                    height: 0;
+                    font-size: 32px;
+                    // justify-content: center;
+                    // align-items: center;
+                    // text-align: center;
+                    cursor: pointer;
+                }
+            }
+        }
+
+    }
+
+}
