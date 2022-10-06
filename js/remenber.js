@@ -1,4 +1,8 @@
-$(".showDialogBtn").click(function () {
+// 當設定的 指定class btn 點擊時 觸發 訊息框事件
+// $("body").append(newDialog("title","content",cancelBtn,okBtn))
+// 若沒有要使用 cancelBtn 要放 null  
+// 結束後要記得使用 show();
+$(".memberBtn").click(function () {
     // 在<body>加入newDialog html。
     $("body").append(
         newDialog("標題",
@@ -26,8 +30,12 @@ $(".showDialogBtn2").click(function () {
     show();
 });
 
+// 依序放入 (標題,內容,取消按鈕,ok按鈕)
 function newDialog(title, content, cancelBtn, okBtn) {
+    // 取消按鈕內容
     var cancelBtnHtml = "";
+
+    // 確認按鈕內容
     var okBtnHtml = "";
 
     // 若cancelBtn或okBtn不為null，則加入button模板，否則維持宣告時的空字串。
@@ -38,6 +46,7 @@ function newDialog(title, content, cancelBtn, okBtn) {
         okBtnHtml = `<div class="okBtn">${okBtn}</div>`;
     }
 
+    // 依序放入對應內容至div
     return `<div class="dialog">
               <div class="title">${title}</div>
               <div class="content">${content}</div>
@@ -66,7 +75,7 @@ function showModal() {
 function fadeInAnimation() {
     $(".dialog").animate({
         opacity: '1',
-        top: '50px' // 決定對話框要滑到哪個位置停止。		   
+        top: '150px' // 決定對話框要滑到哪個位置停止。		   
     }, 550);
 }
 
@@ -75,7 +84,7 @@ function bindListener() {
     $(".okBtn, .cancelBtn").click(function () {
         $(".dialog").animate({
             opacity: '0',
-            top: '-50px' // 需與CSS設定的起始位置相同，以保證下次彈出視窗的效果相同。			   
+            top: '-150px' // 需與CSS設定的起始位置相同，以保證下次彈出視窗的效果相同。			   
         }, 350, function () {
             // 此區塊為callback function，會在動畫結束時被呼叫。
             $(".modal").remove(); // 移除modal。
