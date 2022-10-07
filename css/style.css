@@ -630,24 +630,56 @@ main .backImage .filter {
   display: flex;
 }
 .forum-main .forum-sidemenu {
-  width: 300px;
+  width: 200px;
   height: 100vh;
-  background-color: #854836;
+  background-color: #7F8C8D;
   color: #fff;
-  font-size: 42px;
+  font-size: 24px;
 }
-.forum-main .forum-sidemenu nav {
-  padding: 1.5rem 0;
+.forum-main .forum-sidemenu .tabs-menu div {
+  margin: 1rem 0;
+  font-size: 28px;
   text-align: center;
+  cursor: pointer;
 }
-.forum-main .forum-sidemenu nav li {
-  padding: 10px 0;
-}
-.forum-main .forum-sidemenu nav li:hover {
-  color: #263859;
+.forum-main .forum-sidemenu .tabs-menu div:hover {
+  color: #fff;
+  background-color: #C0392B;
   transition: 0.5s;
+}
+.forum-main .forum-sidemenu .tabs-menu div.active {
+  background-color: #C0392B;
 }
 .forum-main .forum-sidemenu h6 {
   text-align: center;
   font-size: 48px;
+}
+.forum-main .tabs div {
+  height: 0;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+  border-bottom: 3px solid #263859;
+}
+.forum-main .tabs div.current {
+  height: auto;
+  max-height: 200px;
+  transition: all 1s;
+  pointer-events: all;
+  opacity: 1;
+}
+.forum-main .tabs div span {
+  font-size: 20px;
+  padding-left: 1rem;
+}
+.forum-main .tabs div h4 {
+  font-size: 36px;
+  padding-left: 2rem;
+}
+.forum-main .tabs div p {
+  padding-left: 20px;
+  font-size: 20px;
+  overflow: hidden;
+  letter-spacing: 0.1rem;
 }/*# sourceMappingURL=style.css.map */
