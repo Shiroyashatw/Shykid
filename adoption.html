@@ -93,11 +93,13 @@
     </div>
 
     <div class="main-body">
-        <div class="sidemenu">
-            <button type="radio" class="tag" name="sex" data-item="幼犬" id="">幼犬</button>
-            <button type="radio" class="tag" name="sex" data-item="成犬" id="">成犬</button>
-            <button type="radio" class="tag" name="vac" data-item="five" id="">5</button>
-            <button type="radio" class="tag" name="vac" data-item="eight" id="">8</button>
+        <div class="sidemenu" onclick="select_()">
+            <label for=""><input type="radio" name="dog-age" class="picks dogage" value="kid" id="">幼犬</label>
+
+            <input type="radio" name="dog-age" class="picks dogage" value="young" id="">成犬
+
+            <input type="radio" name="dog-vac" class="picks dogvac" value="five">五合一
+            <input type="radio" name="dog-vac" class="picks dogvac" value="eight">八合一
         </div>
         <div class="main-box">
 
@@ -147,10 +149,10 @@
         $(function () {
 
             var petList = [
-                { "title": "幼犬五合一", "age": "幼犬", "vac": "five" },
-                { "title": "幼犬八合一", "age": "幼犬", "vac": "eight" },
-                { "title": "成犬五合一", "age": "成犬", "vac": "five" },
-                { "title": "成犬八合一", "age": "成犬", "vac": "eight" },
+                { "title": "幼犬五合一", "age": "kid", "vac": "five" },
+                { "title": "幼犬八合一", "age": "kid", "vac": "eight" },
+                { "title": "成犬五合一", "age": "young", "vac": "five" },
+                { "title": "成犬八合一", "age": "young", "vac": "eight" },
                 // { "img": "img/dog04.jpg", "title": "成犬" },
             ]
             // 陣列循環取出值 顯示在網頁
@@ -164,34 +166,77 @@
                 // if (obj.age != null) {
                 //     age = `<h1>${obj.age}</h1>`
                 // }
-                let imgList = `<div class="box ${petage} ${petvac}"><h1>${pettitle}</h1></div>`
+                let imgList = `<div class="box displayElement" data-age="${petage}" data-vac="${petvac}"><h1>${pettitle}</h1></div>`
                 $(".main-box").append(imgList);
             })
-
-            // 點擊時顯示對應選項 隱藏其他 
-            $(".tag").click(function () {
-                // 點擊時取得對應data-itme值
-                var x = $(this).data("item");
-                $("div.box." + x).show(600);
-                $("div.box").not("." + x).hide(600);
-                // var y = $('.box').each(function () {
-                //     var race = $(this).attr("race");
-                //     console.log(race);
-                //     if (race != x) {
-                //         $(`[race = ${race}]`).hide(600);
-                //         // 點擊的選項顯示
-                //         $([`[race = ${x}]`]).show(600);
-                //     } else {
-                //         $(`[race = ${race}]`).show(600);
-                //         // $([`[race = ${x}]`]).hide(600);
-                //     }
-
-                // });
-
-            })
-
         })
-        
+
+        //要呈現的元素
+        displayElement = document.getElementsByClassName("displayElement");
+        //列出有哪些選項
+        picks = document.getElementsByClassName("picks");
+        picksArray = new Array();
+        //將所有選項填加 至陣列
+        for (var x = 0; x < picks.length; x++) {
+            picksArray.push(picks[x].className.replace("picks ", ""));
+        }
+        //刪除重複的選項 歸類出哪幾種選項
+        picksArray = [...new Set(picksArray)]
+        console.log("沒有重複的選項有 = " + picksArray);
+
+        function select_() {
+            //關鍵字陣列
+            keyArray = new Array();
+
+            //將有勾選沒勾選 一個都沒選 進行一系列的判斷 儲存關鍵字
+            //第一個判斷有無勾選 一個都沒勾就等於 全部都要看到 所以加入全部
+            //反之 當一個有勾選 其他無視 則加入有勾選的
+            for (var x = 0; x < picksArray.length; x++) {
+                if (!haveCk(picksArray[x])) { PushAll(picksArray[x]) } else { PushOne(picksArray[x]) }
+            }
+
+            //經過關鍵字陣列搜尋後 有=顯示 無=隱藏
+            //這個寫法有個問題是 當新增一種data-NAME 都要在if內手動新增篩選
+            for (var z = 0; z < displayElement.length; z++) {
+                if (keyArray.indexOf(displayElement[z].dataset.age) != -1 &&
+                    keyArray.indexOf(displayElement[z].dataset.vac) != -1
+                ) {
+                    displayElement[z].style.display = "block";
+                } else {
+                    displayElement[z].style.display = "none";
+                }
+            }
+        }
+        //檢查是否有任一選項被勾選
+        function haveCk(tagName) {
+            CkBox = document.getElementsByClassName(tagName);
+            for (var x = 0; x < CkBox.length; x++) {
+                if (CkBox[x].checked == true) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        //填加某分類 所有選項至關鍵字陣列
+        function PushAll(tagName) {
+            pushName = document.getElementsByClassName(tagName);
+            for (var x = 0; x < pushName.length; x++) {
+                keyArray.push(pushName[x].value);
+            }
+            console.log("關鍵字暫存 = " + keyArray)
+        }
+
+        //僅填加被勾選的選項至 關鍵字陣列
+        function PushOne(tagName) {
+            pushName = document.getElementsByClassName(tagName);
+            for (var x = 0; x < pushName.length; x++) {
+                if (pushName[x].checked == true) {
+                    keyArray.push(pushName[x].value);
+                }
+            }
+            console.log("關鍵字暫存 = " + keyArray)
+        }
         $('button').on('click', function () {
             $('button').removeClass('on').addClass('off');
             $(this).removeClass('off').addClass('on');
