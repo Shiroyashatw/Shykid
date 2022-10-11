@@ -17,6 +17,13 @@ a {
     text-decoration: none;
 }
 
+// 順序清單
+.list {
+    font-size: 24px;
+    li {
+        padding: 15px 0;
+    }
+}
 // Js 跳出框 隱藏背景
 .modal {
     position: absolute;
@@ -101,7 +108,7 @@ a {
 
 // 主體背景顏色
 .backgroundColor {
-    background-color: #B47157;
+    background-color: #f2f4f6;
 }
 
 // 主導覽列div
@@ -127,6 +134,7 @@ a {
 
     .main-menu {
         display: flex;
+
         // nav {
         //     // justify-content: right;
         //     // align-items: right;
@@ -136,6 +144,7 @@ a {
             font-size: 20px;
             position: relative;
             transition: .5s;
+
             ul li {
                 min-width: 150px;
             }
@@ -276,12 +285,11 @@ main {
 
 // 中間圖片呈現
 .main-item {
-    min-height: 60vh;
+    min-height: 90vh;
     // margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    
     .shell {
         position: relative;
         display: flex;
@@ -289,7 +297,7 @@ main {
         flex-wrap: wrap;
         transform-style: preserve-3d;
         perspective: 900px;
-        
+
         &:hover {
             .box {
                 transform: rotateY(20deg);
@@ -307,8 +315,8 @@ main {
             transform: rotateY(0);
             transition-delay: .1s;
             border-radius: 5px;
-            border: #000 3px solid;
-            
+            border: #333 4px solid;
+
             &:hover {
                 background-color: #f4f0e6;
                 transition: .5s;
@@ -349,6 +357,7 @@ main {
                 z-index: 999;
                 padding: 15px;
                 box-sizing: content-box;
+
                 h2 a {
                     color: rgba(210, 140, 140);
                     transition: .3s;
@@ -456,10 +465,168 @@ main {
     }
 }
 
+// adoption 領養網頁CSS 
+.main-body {
+    width: 1200px;
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 300px;
+
+    .sidemenu {
+        width: 300px;
+
+        h4 {
+            font-size: 42px;
+            text-align: center;
+            color: #C0392B;
+        }
+
+        h6 {
+            font-size: 30px;
+            text-align: center;
+            margin: 20px 0;
+            border-bottom: 5px solid #293462;
+        }
+
+        label {
+            margin-left: 30px;
+        }
+
+        span {
+            font-size: 26px;
+        }
+    }
+
+    .main-box {
+        width: 1200px;
+        display: flex;
+        flex-wrap: wrap;
+
+        .box {
+            width: 200px;
+            height: 300px;
+            // background-color: wheat;
+            margin: 5px 20px;
+            display: flex;
+
+            img {
+                width: 200px;
+                height: 200px;
+                object-fit: cover;
+                border: 6px solid #3cadeb;
+                // object-position: center;
+                &:hover {
+                    transform: scale(1.2);
+                    border: 6px solid #C0392B;
+                    transition: .5s;
+                }
+            }
+
+            a {
+                width: 50px;
+                color: #000;
+                font-size: 32px;
+            }
+        }
+    }
+
+    // radio按鈕樣式修改
+    #radio input[type="radio"] {
+        display: none;
+    }
+
+    #radio input:checked+.button {
+        background: #293462;
+        color: #fff;
+        cursor: default;
+    }
+
+    #radio .button {
+        display: inline-block;
+        margin: 0 5px 10px 0;
+        padding: 5px 10px;
+        background: #f7f7f7;
+        color: #333;
+        cursor: pointer;
+    }
+
+    #radio .button:hover {
+        background: #293462;
+        color: #fff;
+        transition: .5s;
+    }
+
+    #radio .round {
+        border-radius: 10px;
+    }
+
+}
+
+// adoptionpage 領養網頁CSS
+.adoptionpage-body {
+    h1 {
+        margin-top: 50px;
+        font-size: 56px;
+        text-align: center;
+        color: #B47157;
+    }
+    a {
+        width: 300px;
+        margin: 0 auto 50px auto;
+        font-size: 52px;
+        color: #fff;
+        text-align: center;
+        background-color: #3b9a9c;
+        border: 2px solid #7F8C8D;
+        border-radius: 15px;
+        &:hover {
+            color: #000;
+            background-color: #fff1ac;
+            transition: .5s;
+        }
+        i {
+            margin-left: 20px;
+        }
+    }
+    .adoptionpage-mainbox {
+        display: flex;
+        margin: 20px auto 100px auto;
+        .adoptionpage-imgbox {
+            margin-left: 150px;
+            img {
+                width: 300px;
+                height: 300px;
+                object-fit: cover;
+                border: 6px solid #3cadeb;
+            }
+        }
+
+        .adoptionpage-tablebox {
+            margin: 0 20px;
+            table {
+                // width: 800px;
+                &,
+                td {
+                    border: #263859 4px solid;
+                    border-collapse: collapse
+                }
+                td {
+                    width: 150px;
+                    padding: .4rem;
+                    font-size: 36px;
+                    text-align: center;
+                }
+            }
+
+        }
+    }
+}
+
 // vaccine 疫苗網頁CSS
 
 .vaccine-main {
     margin-top: 50px;
+    margin-bottom: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -525,7 +692,7 @@ main {
 
             nav {
                 p {
-                    color: #fff7f7;
+                    color: #a64942;
                     padding-left: 2rem;
                     font-size: 36px;
                     letter-spacing: .5rem;
@@ -715,7 +882,7 @@ main {
 
 }
 
-// singup 登入畫面 css
+// singup 註冊畫面 css
 .singup-body {
     width: 100%;
     min-height: 100vh;
@@ -783,7 +950,7 @@ main {
                     // margin: 0 2rem;  
                     color: #f4f0e6;
                     font-size: 36px;
-                    background-color: #263859;
+                    background-color: #3cadeb;
                     border-radius: 20px;
 
                     &:hover {
@@ -798,6 +965,7 @@ main {
                 width: 300px;
                 margin: auto;
                 text-align: center;
+
                 input {
                     margin: 0;
                     width: 32px;
@@ -809,7 +977,7 @@ main {
                     border: none;
                     margin: 0;
                     padding: 0;
-                    color: #4E0E2E;
+                    color: #3cadeb;
                     background-color: #263859;
                     // width: 0;
                     height: 0;
@@ -818,6 +986,10 @@ main {
                     // align-items: center;
                     // text-align: center;
                     cursor: pointer;
+                    &:hover {
+                        color: #000;
+                        transition: .8s;
+                    }
                 }
             }
         }
@@ -829,18 +1001,20 @@ main {
 // forum 討論區畫面 css
 .forum-main {
     display: flex;
-    
+
     .forum-sidemenu {
         width: 200px;
         height: 100vh;
         background-color: #7F8C8D;
         color: #fff;
         font-size: 24px;
+
         .tabs-menu div {
             margin: 1rem 0;
             font-size: 28px;
             text-align: center;
             cursor: pointer;
+
             // display: inline-block;
             // border: 1px #000000 solid;
             // padding: .5rem;
@@ -849,13 +1023,20 @@ main {
                 background-color: #C0392B;
                 transition: .5s;
             }
+
             &.active {
                 background-color: #C0392B;
             }
         }
+
         h6 {
             text-align: center;
             font-size: 48px;
+        }
+    }
+    .tabs {
+        a {
+            color: #000;
         }
     }
     .tabs div {
@@ -867,23 +1048,26 @@ main {
         opacity: 0;
         pointer-events: none;
         border-bottom: 3px solid #263859;
+
         &.current {
             height: auto;
             max-height: 200px;
-            transition: all 1s ;
+            transition: all 1s;
             pointer-events: all;
             opacity: 1;
         }
-        
+
         span {
-            
+
             font-size: 20px;
             padding-left: 1rem;
         }
+
         h4 {
             font-size: 36px;
             padding-left: 2rem;
         }
+
         p {
             padding-left: 20px;
             font-size: 20px;
@@ -891,4 +1075,45 @@ main {
             letter-spacing: .1rem;
         }
     }
+}
+
+//  aboutus 畫面 css
+.aboutus-main {
+    .aboutus-backImage {
+        width: 100%;
+        min-height: 90vh;
+        background-image: url(../img/aboutus01.jpg);
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        opacity: .8;
+        z-index: 0;
+        // 設定使元素變成flex並置中
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+
+        h3 {
+            margin-bottom: 1rem;
+            font-size: 2.2rem;
+            color: white;
+            line-height: 4rem;
+            letter-spacing: .4rem;
+            opacity: 1;
+        }
+
+
+        .aboutus-filter {
+            width: 100%;
+            min-height: 90vh;
+            background-color: rgba(0, 0, 0, .5);
+            position: absolute;
+            top: 0;
+            z-index: -1;
+        }
+
+    }
+
 }

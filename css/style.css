@@ -17,6 +17,13 @@ a {
   text-decoration: none;
 }
 
+.list {
+  font-size: 24px;
+}
+.list li {
+  padding: 15px 0;
+}
+
 .modal {
   position: absolute;
   z-index: 10;
@@ -93,7 +100,7 @@ a {
 }
 
 .backgroundColor {
-  background-color: #B47157;
+  background-color: #f2f4f6;
 }
 
 .main-header {
@@ -221,7 +228,7 @@ main .backImage .filter {
 }
 
 .main-item {
-  min-height: 60vh;
+  min-height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -247,7 +254,7 @@ main .backImage .filter {
   transform: rotateY(0);
   transition-delay: 0.1s;
   border-radius: 5px;
-  border: #000 3px solid;
+  border: #333 4px solid;
 }
 .main-item .shell .box:hover {
   background-color: #f4f0e6;
@@ -353,8 +360,141 @@ main .backImage .filter {
   height: 0;
 }
 
+.main-body {
+  width: 1200px;
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 300px;
+}
+.main-body .sidemenu {
+  width: 300px;
+}
+.main-body .sidemenu h4 {
+  font-size: 42px;
+  text-align: center;
+  color: #C0392B;
+}
+.main-body .sidemenu h6 {
+  font-size: 30px;
+  text-align: center;
+  margin: 20px 0;
+  border-bottom: 5px solid #293462;
+}
+.main-body .sidemenu label {
+  margin-left: 30px;
+}
+.main-body .sidemenu span {
+  font-size: 26px;
+}
+.main-body .main-box {
+  width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.main-body .main-box .box {
+  width: 200px;
+  height: 300px;
+  margin: 5px 20px;
+  display: flex;
+}
+.main-body .main-box .box img {
+  width: 200px;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 6px solid #3cadeb;
+}
+.main-body .main-box .box img:hover {
+  transform: scale(1.2);
+  border: 6px solid #C0392B;
+  transition: 0.5s;
+}
+.main-body .main-box .box a {
+  width: 50px;
+  color: #000;
+  font-size: 32px;
+}
+.main-body #radio input[type=radio] {
+  display: none;
+}
+.main-body #radio input:checked + .button {
+  background: #293462;
+  color: #fff;
+  cursor: default;
+}
+.main-body #radio .button {
+  display: inline-block;
+  margin: 0 5px 10px 0;
+  padding: 5px 10px;
+  background: #f7f7f7;
+  color: #333;
+  cursor: pointer;
+}
+.main-body #radio .button:hover {
+  background: #293462;
+  color: #fff;
+  transition: 0.5s;
+}
+.main-body #radio .round {
+  border-radius: 10px;
+}
+
+.adoptionpage-body h1 {
+  margin-top: 50px;
+  font-size: 56px;
+  text-align: center;
+  color: #B47157;
+}
+.adoptionpage-body a {
+  width: 300px;
+  margin: 0 auto 50px auto;
+  font-size: 52px;
+  color: #fff;
+  text-align: center;
+  background-color: #3b9a9c;
+  border: 2px solid #7F8C8D;
+  border-radius: 15px;
+}
+.adoptionpage-body a:hover {
+  color: #000;
+  background-color: #fff1ac;
+  transition: 0.5s;
+}
+.adoptionpage-body a i {
+  margin-left: 20px;
+}
+.adoptionpage-body .adoptionpage-mainbox {
+  display: flex;
+  margin: 20px auto 100px auto;
+}
+.adoptionpage-body .adoptionpage-mainbox .adoptionpage-imgbox {
+  margin-left: 150px;
+}
+.adoptionpage-body .adoptionpage-mainbox .adoptionpage-imgbox img {
+  width: 300px;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 6px solid #3cadeb;
+}
+.adoptionpage-body .adoptionpage-mainbox .adoptionpage-tablebox {
+  margin: 0 20px;
+}
+.adoptionpage-body .adoptionpage-mainbox .adoptionpage-tablebox table,
+.adoptionpage-body .adoptionpage-mainbox .adoptionpage-tablebox table td {
+  border: #263859 4px solid;
+  border-collapse: collapse;
+}
+.adoptionpage-body .adoptionpage-mainbox .adoptionpage-tablebox table td {
+  width: 150px;
+  padding: 0.4rem;
+  font-size: 36px;
+  text-align: center;
+}
+
 .vaccine-main {
   margin-top: 50px;
+  margin-bottom: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -408,7 +548,7 @@ main .backImage .filter {
   letter-spacing: 2rem;
 }
 .disease-main .disease-box .disease-textbox nav p {
-  color: #fff7f7;
+  color: #a64942;
   padding-left: 2rem;
   font-size: 36px;
   letter-spacing: 0.5rem;
@@ -596,7 +736,7 @@ main .backImage .filter {
 .singup-body .singup-main .singup-container .enter a {
   color: #f4f0e6;
   font-size: 36px;
-  background-color: #263859;
+  background-color: #3cadeb;
   border-radius: 20px;
 }
 .singup-body .singup-main .singup-container .enter a:hover {
@@ -619,11 +759,15 @@ main .backImage .filter {
   border: none;
   margin: 0;
   padding: 0;
-  color: #4E0E2E;
+  color: #3cadeb;
   background-color: #263859;
   height: 0;
   font-size: 32px;
   cursor: pointer;
+}
+.singup-body .singup-main .singup-container .memberbox .memberBtn:hover {
+  color: #000;
+  transition: 0.8s;
 }
 
 .forum-main {
@@ -654,6 +798,9 @@ main .backImage .filter {
   text-align: center;
   font-size: 48px;
 }
+.forum-main .tabs a {
+  color: #000;
+}
 .forum-main .tabs div {
   height: 0;
   overflow: hidden;
@@ -682,4 +829,36 @@ main .backImage .filter {
   font-size: 20px;
   overflow: hidden;
   letter-spacing: 0.1rem;
+}
+
+.aboutus-main .aboutus-backImage {
+  width: 100%;
+  min-height: 90vh;
+  background-image: url(../img/aboutus01.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  opacity: 0.8;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.aboutus-main .aboutus-backImage h3 {
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
+  color: white;
+  line-height: 4rem;
+  letter-spacing: 0.4rem;
+  opacity: 1;
+}
+.aboutus-main .aboutus-backImage .aboutus-filter {
+  width: 100%;
+  min-height: 90vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  z-index: -1;
 }/*# sourceMappingURL=style.css.map */
