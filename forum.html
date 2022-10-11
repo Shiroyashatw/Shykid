@@ -91,7 +91,7 @@
                             <li><a href="disease.html">常見症狀</a></li>
                         </ul>
                     </li>
-                    <li><a href="">討論區<i class="fa-solid fa-bone"></i></a>
+                    <li><a href="forum.html">討論區<i class="fa-solid fa-bone"></i></a>
                         <ul class="dropdown">
                             <li><a href="column.html">專欄報導</a></li>
                             <li><a href=""></a></li>
@@ -103,8 +103,7 @@
                 </ul>
             </nav>
         </div>
-    </div>
-
+    </div> 
     <div class="forum-main">
         <!-- 側邊導覽列 看板選擇 -->
         <div class="forum-sidemenu">
@@ -121,10 +120,14 @@
             </div>
         </div>
         <div class="tabs">
-            <div class="tab tab-1 current">
-                RWD響應式網站<BR>
-                採用CSS3+JQueay網頁技術，讓網頁依據不同解析度裝置去套用不同的CSS。當使用者以手機、平板或電腦瀏覽網站時，頁面會根據裝置來符合螢幕大小的網頁版本。
-            </div>
+            <a href=""></a>
+            <a href="" style="color: #000;">
+                <div class="tab tab-1 current">
+                    RWD響應式網站<BR>
+                    採用CSS3+JQueay網頁技術，讓網頁依據不同解析度裝置去套用不同的CSS。當使用者以手機、平板或電腦瀏覽網站時，頁面會根據裝置來符合螢幕大小的網頁版本。
+                </div>
+            </a>
+            
             <div class="tab tab-2">
                 名片︱謝卡<BR>
                 易思設計提供各式尺寸工商名片、婚禮謝卡、集點卡、傳單、菜單、海報…設計。我們提供代印服務。可三天快速交件。
@@ -169,11 +172,13 @@
                 var data = obj.data;
 
                 var List = 
-                `<div class="${arttab} ${arttab}">
+                `<a href="">
+                <div class="${arttab} ${arttab}">
                 <span>${tag}</span><span>${data}</span>
                 <h4>${title}</h4>
                 <p>${text}</p>
-                </div>`;
+                </div>
+                </a>`;
 
                 $(".tabs").append(List);
             })

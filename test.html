@@ -16,100 +16,16 @@
     <script src="https://kit.fontawesome.com/da3a6ce48e.js" crossorigin="anonymous"></script>
     <script src="js/jquery.js"></script>
     <title>ShyKid</title>
-
-    <style>
-        * {
-            padding: 0;
-            margin: 0;
-        }
-
-        .main-body {
-            width: 1200px;
-            display: flex;
-        }
-
-        button {
-            width: 70px;
-            height: 50px;
-            color: brown;
-            font-size: 24px;
-        }
-
-        .main-box {
-            width: 1200px;
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .box {
-            width: 250px;
-            height: 200px;
-            background-color: brown;
-            margin: 10px;
-            display: flex;
-        }
-
-        .box img {
-            width: 250px;
-            height: 200px;
-            object-fit: cover;
-        }
-    </style>
 </head>
 
 <body>
-    <script>
 
-        $(function () {
-            var petList = [
-                { "img": "img/dog01.jpg", "title": "幼犬","age":null },
-                { "img": "img/dog02.jpg", "title": "成犬","age":"young" },
-                { "img": "img/dog03.jpg", "title": "幼犬" },
-                // { "img": "img/dog04.jpg", "title": "成犬" },
-                // { "img": "img/dog04.jpg", "title": "成犬" },
-                // { "img": "img/dog04.jpg", "title": "成犬" },
-                // { "img": "img/dog04.jpg", "title": "成犬" },
-                // { "img": "img/dog04.jpg", "title": "成犬" },
-                // { "img": "img/dog04.jpg", "title": "成犬" },
-                // { "img": "img/dog04.jpg", "title": "成犬" }
-            ]
-            // 陣列循環取出值 顯示在網頁
-            $.each(petList, function (index, obj) {
-                var petimg = obj.img;
-                var pettitle = obj.title;
-                var age = '';
-                if (obj.age != null) {
-                    age = `<h1>${obj.age}</h1>`
-                }
-                console.log(age);
-                var imgList = `${age}<div class="box ${pettitle}"><img class="" src="${petimg}" alt=""></div>`
-                $(".main-box").append(imgList);
-            })
-
-            $(".tag").click(function () {
-                var x = $(this).data("item");
-                console.log(x);
-                $.each(petList, function (index, obj) {
-                    var petimg = obj.img;
-                    var pettitle = obj.title;
-                    console.log(pettitle);
-
-                    if (pettitle != x) {
-                        $("." + pettitle).hide(600);
-                        $("." + x).show(600);
-                    } else {
-                        $("." + pettitle).show(600);
-                        // $("."+x).hide();
-                    }
-                })
-            })
-            // $(".tag").click(function() {
-            //     $imgList.appendTo(".main-box")
-            // })
-        })
-    </script>
-
-    <div class="main-body">
+    <ol class="list" style="list-style: upper-roman inside">
+        <li>會員不得任意張貼非相關內容，如色情、賭博等違法內容，經檢舉查核屬實無條件停權帳號</li>
+        <li>本網不鼓勵寵物購買，若後續雙方有任何交易糾紛，本網不負相關責任</li>
+        <li>有領養意願，可聯絡張貼相關單位/人士，但盡量避免單獨前往或去人煙稀少的地方，以保證安全</li>
+    </ol>
+    <!-- <div class="main-body">
         <div class="sidemenu">
             <button class="tag" data-item="幼犬">幼犬</button>
             <button class="tag" data-item="成犬">成犬</button>
@@ -117,11 +33,28 @@
         <div class="main-box">
 
         </div>
+    </div> -->
+    <form action="index.html" name="form1" method="post" onclick="return false">
+        <label for="">帳號</label>
+        <input type="text" name="account">
+        <button type="submit" name="button" id="button">OK</button>
+    </form>
+
+
     </div>
 
-
-
-    </div>
+    <script>
+        $(function () {
+            $("#button").click(function () {
+                if ($("input[name='account']").val() == "") {
+                    alert("空白內容")
+                    eval("document.form1['name'].focus()");
+                } else {
+                    document.form1.submit();
+                }
+            })
+        })
+    </script>
 </body>
 
 </html>

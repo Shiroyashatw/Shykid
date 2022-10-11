@@ -16,51 +16,10 @@
     <script src="https://kit.fontawesome.com/da3a6ce48e.js" crossorigin="anonymous"></script>
     <script src="js/jquery.js"></script>
     <title>ShyKid</title>
-
-    <style>
-        * {
-            padding: 0;
-            margin: 0;
-        }
-
-        .main-body {
-            width: 1200px;
-            display: flex;
-        }
-
-        button.on {
-            background: black;
-            color: white;
-        }
-
-        button.off {
-            background: lightgray;
-            color: gray;
-        }
-
-        .main-box {
-            width: 1200px;
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .box {
-            width: 250px;
-            height: 200px;
-            background-color: wheat;
-            margin: 10px;
-            display: flex;
-        }
-
-        .box img {
-            width: 250px;
-            height: 200px;
-            object-fit: cover;
-        }
-    </style>
 </head>
 
-<body>
+<body style="background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255,255,255,0.50) 47%, rgba(0,0,0,0.50) 100%);
+background-blend-mode: screen;">
     <!-- 導覽列 -->
     <div class="main-header">
         <div class="container">
@@ -75,8 +34,7 @@
                     <li>
                         <a href="">領養<i class="fa-solid fa-paw"></i></a>
                         <ul class="dropdown">
-                            <li><a href="">待養寵物</a></li>
-                            <li><a href="">領養資訊</a></li>
+                            <li><a href="adoption.html">領養資訊</a></li>
                             <li><a href=""></a></li>
                         </ul>
                     </li>
@@ -86,23 +44,44 @@
                             <li><a href="disease.html">常見症狀</a></li>
                         </ul>
                     </li>
+                    <li><a href="forum.html">討論區<i class="fa-solid fa-bone"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="column.html">專欄報導</a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                        </ul>
+                    </li>
                     <li><a href="">關於我們<i class="fa-regular fa-address-card"></i></a></li>
+                    <li><a href="login.html">登入/註冊<i class="fa-solid fa-user-plus"></i></a></li>
                 </ul>
             </nav>
         </div>
     </div>
 
+
     <div class="main-body">
-        <div class="sidemenu" onclick="select_()">
-            <label for=""><input type="radio" name="dog-age" class="picks dogage" value="kid" id="">幼犬</label>
-
-            <input type="radio" name="dog-age" class="picks dogage" value="young" id="">成犬
-
-            <input type="radio" name="dog-vac" class="picks dogvac" value="five">五合一
-            <input type="radio" name="dog-vac" class="picks dogvac" value="eight">八合一
+        <div class="sidemenu" id="radio" onclick="select_()">
+            <h4>條件類型</h4>
+            <h6>性別</h6>
+            <label><input type="radio" name="dog-sex" class="picks dogsex" value="male">
+                <span class="round button">公
+                </span>
+            </label>
+            <label><input type="radio" name="dog-sex" class="picks dogsex" value="female">
+                <span class="round button">母
+                </span>
+            </label>
+            <h6>年齡</h6>
+            <label><input type="radio" name="dog-age" class="picks dogage" value="kid">
+                <span class="round button">幼犬
+                </span>
+            </label>
+            <label><input type="radio" name="dog-age" class="picks dogage" value="young">
+                <span class="round button">成犬
+                </span>
+            </label>
         </div>
         <div class="main-box">
-
         </div>
     </div>
 
@@ -149,24 +128,28 @@
         $(function () {
 
             var petList = [
-                { "title": "幼犬五合一", "age": "kid", "vac": "five" },
-                { "title": "幼犬八合一", "age": "kid", "vac": "eight" },
-                { "title": "成犬五合一", "age": "young", "vac": "five" },
-                { "title": "成犬八合一", "age": "young", "vac": "eight" },
-                // { "img": "img/dog04.jpg", "title": "成犬" },
+                { "title": "男幼犬", "sex": "male", "age": "kid","img": "img/adoptiondog01.png","link":"adoptionpage01.html"},
+                { "title": "女幼犬", "sex": "female", "age": "kid","img": "img/adoptiondog02.png"},
+                { "title": "女成犬", "sex": "female", "age": "young","img": "img/adoptiondog03.jpg"},
+                { "title": "男成犬", "sex": "male", "age": "young","img": "img/adoptiondog04.jpg"},
+                { "title": "男幼犬", "sex": "male", "age": "kid","img": "img/adoptiondog05.jpg"},
+                { "title": "女幼犬", "sex": "female", "age": "kid","img": "img/adoptiondog06.jpg"},
+                { "title": "女成犬", "sex": "female", "age": "young","img": "img/adoptiondog07.jpg"},
+                { "title": "男成犬", "sex": "male", "age": "young","img": "img/adoptiondog08.jpg"},
             ]
             // 陣列循環取出值 顯示在網頁
             $.each(petList, function (index, obj) {
                 // var petimg = obj.img;
                 var pettitle = obj.title
+                var petsex = obj.sex;
                 var petage = obj.age;
-                var petvac = obj.vac;
-
+                var petimg = obj.img
+                var petlink = obj.link
                 // var age = '';
                 // if (obj.age != null) {
                 //     age = `<h1>${obj.age}</h1>`
                 // }
-                let imgList = `<div class="box displayElement" data-age="${petage}" data-vac="${petvac}"><h1>${pettitle}</h1></div>`
+                let imgList = `<div class="box displayElement" data-sex="${petsex}" data-age="${petage}" > <a href="${petlink}"><img src="${petimg}" alt=""></a></div>`
                 $(".main-box").append(imgList);
             })
         })
@@ -199,7 +182,7 @@
             //這個寫法有個問題是 當新增一種data-NAME 都要在if內手動新增篩選
             for (var z = 0; z < displayElement.length; z++) {
                 if (keyArray.indexOf(displayElement[z].dataset.age) != -1 &&
-                    keyArray.indexOf(displayElement[z].dataset.vac) != -1
+                    keyArray.indexOf(displayElement[z].dataset.sex) != -1
                 ) {
                     displayElement[z].style.display = "block";
                 } else {
@@ -237,10 +220,6 @@
             }
             console.log("關鍵字暫存 = " + keyArray)
         }
-        $('button').on('click', function () {
-            $('button').removeClass('on').addClass('off');
-            $(this).removeClass('off').addClass('on');
-        });
     </script>
 
 
